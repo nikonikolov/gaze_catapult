@@ -1,0 +1,14 @@
+
+# Messages from "go new"
+
+Creating project directory 'H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\value_to_pix\value_to_pix'. (PRJ-1)
+Branching solution 'solution.v1' at state 'new' (PRJ-2)
+
+# Messages from "go analyze"
+
+Front End called with arguments: -- {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\value_to_pix\value_to_pix.c} {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\value_to_pix\value_to_pix.h} (CIN-69)
+Edison Design Group C++/C Front End - Version 3.10.1 (CIN-1)
+Pragma 'hls_design<top>' detected on routine 'value_to_pix' (CIN-6)
+Source file analysis completed (CIN-68)
+Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+Completed transformation 'analyze' on solution 'solution.v1': elapsed time 1.50 seconds, memory usage 160732kB, peak memory usage 204700kB (SOL-9)

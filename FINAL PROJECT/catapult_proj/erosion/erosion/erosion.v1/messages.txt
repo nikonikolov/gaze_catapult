@@ -1,0 +1,72 @@
+
+# Messages from "go new"
+
+Creating project directory 'H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\erosion'. (PRJ-1)
+
+# Messages from "go analyze"
+
+Front End called with arguments: -- {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\bmp_io.h} {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\bmp_io.cpp} {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\shift_class.h} {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\erosion.c} {H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\erosion.h} (CIN-69)
+Edison Design Group C++/C Front End - Version 3.10.1 (CIN-1)
+Pragma 'hls_design<top>' detected on routine 'erosion' (CIN-6)
+Source file analysis completed (CIN-68)
+Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+Completed transformation 'analyze' on solution 'solution.v1': elapsed time 2.12 seconds, memory usage 152592kB, peak memory usage 245084kB (SOL-9)
+$PROJECT_HOME/bmp_io.cpp(1699): variable "garray" is used before its value is set (CRD-549)
+          detected during compilation of secondary translation unit "H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\bmp_io.cpp"
+$PROJECT_HOME/bmp_io.cpp(1700): variable "barray" is used before its value is set (CRD-549)
+          detected during compilation of secondary translation unit "H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\bmp_io.cpp"
+$PROJECT_HOME/erosion.h(45): last line of file ends without a newline (CRD-1)
+          detected during compilation of secondary translation unit "H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\erosion.c"
+$PROJECT_HOME/erosion.h(45): last line of file ends without a newline (CRD-1)
+          detected during compilation of secondary translation unit "H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\erosion\erosion.h"
+
+# Messages from "go compile"
+
+Reading component library '$MGC_HOME\pkgs\siflibs\mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+Reading component library '$MGC_HOME\pkgs\siflibs\stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME\pkgs\siflibs\mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+Reading component library '$MGC_HOME\pkgs\ccs_altera\Altera_accel_CycloneIII.lib' [Altera_accel_CycloneIII]... (LIB-49)
+Reading component library '$MGC_HOME\pkgs\siflibs\psr2010a_up2\mgc_Altera-Cyclone-III-6_beh_psr.lib' [mgc_Altera-Cyclone-III-6_beh_psr]... (LIB-49)
+Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+Generating synthesis internal form... (CIN-3)
+Found top design routine 'erosion' specified by directive (CIN-52)
+Synthesizing routine 'erosion' (CIN-13)
+Inlining routine 'erosion' (CIN-14)
+Inlining member function 'shift_class<ac_int<150, false>, 5>::shift_class' on object 'regs' (CIN-64)
+Inlining member function 'shift_class<ac_int<150, false>, 5>::operator<<' on object 'regs' (CIN-64)
+Inlining member function 'shift_class<ac_int<150, false>, 5>::operator[]' on object 'regs' (CIN-64)
+Optimizing block '/erosion' ... (CIN-4)
+Inout port 'vin' is only used as an input. (OPT-10)
+Inout port 'vout' is only used as an output. (OPT-11)
+Loop '/erosion/core/SHIFT' iterated at most 5 times. (LOOP-2)
+Loop '/erosion/core/ACC1:for' iterated at most 5 times. (LOOP-2)
+Loop '/erosion/core/ACC1' iterated at most 5 times. (LOOP-2)
+Loop '/erosion/core/FRAME' iterated at most 420000 times. (LOOP-2)
+Design 'erosion' was read (SOL-1)
+Optimizing partition '/erosion': (Total ops = 83, Real ops = 20, Vars = 29) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 83, Real ops = 20, Vars = 27) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 83, Real ops = 20, Vars = 27) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 83, Real ops = 20, Vars = 29) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 83, Real ops = 20, Vars = 29) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 83, Real ops = 20, Vars = 27) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 59, Real ops = 19, Vars = 14) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 50, Real ops = 19, Vars = 13) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 50, Real ops = 19, Vars = 13) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 50, Real ops = 19, Vars = 15) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 50, Real ops = 19, Vars = 15) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 47, Real ops = 16, Vars = 17) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 108, Real ops = 16, Vars = 8) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 108, Real ops = 16, Vars = 10) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 108, Real ops = 16, Vars = 8) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 108, Real ops = 16, Vars = 10) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 108, Real ops = 16, Vars = 10) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 108, Real ops = 16, Vars = 8) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 67, Real ops = 15, Vars = 8) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 55, Real ops = 15, Vars = 7) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 55, Real ops = 15, Vars = 9) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 49, Real ops = 15, Vars = 11) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 48, Real ops = 15, Vars = 7) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 48, Real ops = 15, Vars = 9) (SOL-10)
+Optimizing partition '/erosion/core': (Total ops = 48, Real ops = 15, Vars = 7) (SOL-10)
+Optimizing partition '/erosion': (Total ops = 48, Real ops = 15, Vars = 9) (SOL-10)
+Completed transformation 'compile' on solution 'erosion.v1': elapsed time 1.54 seconds, memory usage 158024kB, peak memory usage 245084kB (SOL-9)

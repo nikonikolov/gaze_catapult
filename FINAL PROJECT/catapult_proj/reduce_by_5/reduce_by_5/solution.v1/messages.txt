@@ -1,0 +1,5 @@
+
+# Messages from "go new"
+
+Creating project directory 'H:\FINAL PROJECT\FINAL PROJECT\catapult_proj\reduce_by_5\reduce_by_5'. (PRJ-1)
+Branching solution 'solution.v1' at state 'new' (PRJ-2)

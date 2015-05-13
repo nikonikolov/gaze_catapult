@@ -1,4 +1,9 @@
 
+State Machine - |TOP_DE0_CAMERA_MOUSE|erosion:inst1|erosion_core:erosion_core_inst|erosion_core_fsm:erosion_core_fsm_inst|state_var
+Name state_var.st_FRAME 
+state_var.st_main 0 
+state_var.st_FRAME 1 
+
 State Machine - |TOP_DE0_CAMERA_MOUSE|ps2:inst6|cur_state
 Name cur_state.trans cur_state.pulldat cur_state.pullclk cur_state.listen 
 cur_state.listen 0 0 0 0 

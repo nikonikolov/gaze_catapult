@@ -44,33 +44,21 @@
 #include "shift_class.h" 
 
 
-/*INSTRUCTIONS:
-	proper function declaration
-	loop for going through whole image, if needed
-	proper dimensions of the loop - divide by 5 each component
-	shift register?*/
-
 
 
 #pragma hls_design top
-
-//modify size of array	
-void detect_skin(ac_int<1*KERNEL_WIDTH,false> vin[NUM_PIXELS], ac_int<1*KERNEL_WIDTH,false> vout[NUM_PIXELS])
+void erosion(ac_int<PIXEL_WL*KERNEL_WIDTH,false> vin[NUM_PIXELS], ac_int<PIXEL_WL,false> vout[NUM_PIXELS])
 {
-    bool apply;
-
-    ac_int<13, false> Ytmp, Cbtmp, Crtmp, r[KERNEL_WIDTH], g[KERNEL_WIDTH], b[KERNEL_WIDTH];
-
+   // ac_int<5, false> count;
+   bool apply; 
 
 // #if 1: use filter
 // #if 0: copy input to output bypassing filter
 #if 1
 
     // shifts pixels from KERNEL_WIDTH rows and keeps KERNEL_WIDTH columns (KERNEL_WIDTHxKERNEL_WIDTH pixels stored)
-    static shift_class<ac_int<1*KERNEL_WIDTH,false>, KERNEL_WIDTH> regs;
-    //NOTE: initialized to 0 and retains state between function calls
-
-    int i, j;
+    static shift_class<ac_int<PIXEL_WL*KERNEL_WIDTH,false>, KERNEL_WIDTH> regs;
+    int i;
 
     FRAME: for(int p = 0; p < NUM_PIXELS; p++) {
 		// init
@@ -79,48 +67,22 @@ void detect_skin(ac_int<1*KERNEL_WIDTH,false> vin[NUM_PIXELS], ac_int<1*KERNEL_W
 		// shift input data in the filter fifo
 		regs << vin[p]; // advance the pointer address by the pixel number (testbench/simulation only)
 		// accumulate
-		ACC1: 
-
-		for(i = 0; i < KERNEL_WIDTH; i++) {
-			//(regs[i].slc<COLOUR_WL>(0)	0 - LSB to start, COLOUR_WL - width of the cut value, i specifies the column
-			if(regs[i].slc<1>(0)!=1){
-				apply=false;
-				break;
+		ACC1: for(i = 0; i < KERNEL_WIDTH; i++) {
+			// current line
+			for(int j=0; j<KERNEL_WIDTH; j++){
+			   if(regs[i].slc<PIXEL_WL>(j*PIXEL_WL)!=1073741823){ 
+			     apply=false;
+			     break;
+			   }
 			}
-
-			if(regs[i].slc<1>(1)!=1){
-				apply=false;
-				break;
-			}
-
-			if(regs[i].slc<1>(2)!=1){
-				apply=false;
-				break;
-			}
-				
 		}
-
-		//have to output array
-		//might be able to output only one value, like the blur
-		if(apply){
-			for(i=0; i<KERNEL_WIDTH; i++){
-				vout[p+i]=111;	//check dereference is true
-			}	
-		}
-
-		if(apply){
-			for(i=0; i<KERNEL_WIDTH; i++){
-				vout[p+i]=000;
-			}	
-		}
-		
-		vout[p] = ((((ac_int<PIXEL_WL, false>)red) << (2*COLOUR_WL)) | (((ac_int<PIXEL_WL, false>)green) << COLOUR_WL) | (ac_int<PIXEL_WL, false>)blue);
+	    
+		// group the RGB components into a single signal
+		if(apply) vout[p] = 1073741823;
+		else vout[p] = 0;
 	    
     }
 }
-     
-     
-     
      
      
      

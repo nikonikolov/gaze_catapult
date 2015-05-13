@@ -15,31 +15,32 @@
 // |______\___/|_| |_|\__,_|\___/|_| |_|
 //
 ////////////////////////////////////////////////////////////////////////////////
-//  File:           blur.h
+//  File:           skin.h
 //  Description:    vga blur - real-time processing
 //  By:             rad09
 ////////////////////////////////////////////////////////////////////////////////
 // this hardware block receives the VGA stream and then produces a blured output
-////////////////////////////////////////////////////////////////////////////////
+//299*R + 587*G + 114*B//////////////////////////////////////////////////////////////////////////////
 
 
 #ifndef _SKIN
 #define _SKIN
 
-#include <ac_int.h>
+//#include <ac_int.h>
+#include <ac_fixed.h>
 #include <iostream>
 
 // total number of pixels from screen frame/image read in testbench
-#define NUM_PIXELS (640*480)
+//#define NUM_PIXELS (640*480)
 
-#define REGION      5
-#define KERNEL_NUMEL      (KERNEL_WIDTH * KERNEL_WIDTH)
+//#define REGION      5
+//#define KERNEL_NUMEL      (KERNEL_WIDTH * KERNEL_WIDTH)
 #define COLOUR_WL         10
 #define PIXEL_WL          (3 * COLOUR_WL)
 
 #define  COORD_WL          10
 
 
-void void detect_skin(ac_int<PIXEL_WL,false> pixin, ac_int<1,false> valueout);
+void detect_skin(ac_int<PIXEL_WL, false> * pixin, ac_int<PIXEL_WL,false> *pixout);
 
 #endif
