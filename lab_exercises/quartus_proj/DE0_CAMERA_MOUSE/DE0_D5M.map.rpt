@@ -1,0 +1,286 @@
+Analysis & Synthesis report for DE0_D5M
+Fri Mar 06 16:40:29 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Mar 06 16:40:29 2015                ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; DE0_D5M                                          ;
+; Top-level Entity Name              ; TOP_DE0_CAMERA_MOUSE                             ;
+; Family                             ; Cyclone III                                      ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
++------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                     ; Setting              ; Default Value      ;
++----------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6         ;                    ;
+; Top-level entity name                                                      ; TOP_DE0_CAMERA_MOUSE ; DE0_D5M            ;
+; Family name                                                                ; Cyclone III          ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; On                   ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                   ; On                 ;
+; Enable compact report table                                                ; Off                  ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                 ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                  ; Off                ;
+; Preserve fewer node names                                                  ; On                   ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                  ; Off                ;
+; Verilog Version                                                            ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                 ; Auto               ;
+; Safe State Machine                                                         ; Off                  ; Off                ;
+; Extract Verilog State Machines                                             ; On                   ; On                 ;
+; Extract VHDL State Machines                                                ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                   ; On                 ;
+; Parallel Synthesis                                                         ; On                   ; On                 ;
+; DSP Block Balancing                                                        ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                   ; On                 ;
+; Power-Up Don't Care                                                        ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                 ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                  ; Off                ;
+; Optimization Technique                                                     ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                         ; 70                   ; 70                 ;
+; Auto Carry Chains                                                          ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                  ; Off                ;
+; Auto ROM Replacement                                                       ; On                   ; On                 ;
+; Auto RAM Replacement                                                       ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                   ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                   ; On                 ;
+; Strict RAM Replacement                                                     ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                  ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                   ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                      ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                   ; On                 ;
+; Report Parameter Settings                                                  ; On                   ; On                 ;
+; Report Source Assignments                                                  ; On                   ; On                 ;
+; Report Connectivity Checks                                                 ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                    ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                          ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                  ; 100                ;
+; Clock MUX Protection                                                       ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                  ; Off                ;
+; Block Design Naming                                                        ; Auto                 ; Auto               ;
+; SDC constraint protection                                                  ; Off                  ; Off                ;
+; Synthesis Effort                                                           ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                   ; On                 ;
+; Synthesis Seed                                                             ; 1                    ; 1                  ;
++----------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri Mar 06 16:40:26 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_D5M -c DE0_D5M
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 7 design units, including 7 entities, in source file rtl_mgc_ioport_v2001.v
+    Info (12023): Found entity 1: mgc_out_reg_pos
+    Info (12023): Found entity 2: mgc_out_reg_neg
+    Info (12023): Found entity 3: mgc_out_reg
+    Info (12023): Found entity 4: mgc_out_buf_wait
+    Info (12023): Found entity 5: mgc_out_fifo_wait
+    Info (12023): Found entity 6: mgc_out_fifo_wait_core
+    Info (12023): Found entity 7: mgc_pipe
+Info (12021): Found 20 design units, including 20 entities, in source file rtl_mgc_ioport.v
+    Info (12023): Found entity 1: mgc_in_wire
+    Info (12023): Found entity 2: mgc_in_wire_en
+    Info (12023): Found entity 3: mgc_in_wire_wait
+    Info (12023): Found entity 4: mgc_chan_in
+    Info (12023): Found entity 5: mgc_out_stdreg
+    Info (12023): Found entity 6: mgc_out_stdreg_en
+    Info (12023): Found entity 7: mgc_out_stdreg_wait
+    Info (12023): Found entity 8: mgc_out_prereg_en
+    Info (12023): Found entity 9: mgc_inout_stdreg_en
+    Info (12023): Found entity 10: hid_tribuf
+    Info (12023): Found entity 11: mgc_inout_stdreg_wait
+    Info (12023): Found entity 12: mgc_inout_buf_wait
+    Info (12023): Found entity 13: mgc_inout_fifo_wait
+    Info (12023): Found entity 14: mgc_io_sync
+    Info (12023): Found entity 15: mgc_bsync_rdy
+    Info (12023): Found entity 16: mgc_bsync_vld
+    Info (12023): Found entity 17: mgc_bsync_rv
+    Info (12023): Found entity 18: mgc_sync
+    Info (12023): Found entity 19: funccall_inout
+    Info (12023): Found entity 20: modulario_en_in
+Info (12021): Found 2 design units, including 2 entities, in source file rtl.v
+    Info (12023): Found entity 1: vga_mouse_square_core
+    Info (12023): Found entity 2: vga_mouse_square
+Info (12021): Found 2 design units, including 2 entities, in source file catapult_ip/blur3x3/rtl.v
+    Info (12023): Found entity 1: mean_vga_core
+    Info (12023): Found entity 2: mean_vga
+Info (12021): Found 1 design units, including 1 entities, in source file v/ps2.v
+    Info (12023): Found entity 1: ps2
+Info (12021): Found 1 design units, including 1 entities, in source file sdram_control_4port/command.v
+    Info (12023): Found entity 1: command
+Info (12021): Found 1 design units, including 1 entities, in source file sdram_control_4port/control_interface.v
+    Info (12023): Found entity 1: control_interface
+Warning (10229): Verilog HDL Expression warning at sdr_data_path.v(68): truncated literal to match 1 bits
+Info (12021): Found 1 design units, including 1 entities, in source file sdram_control_4port/sdr_data_path.v
+    Info (12023): Found entity 1: sdr_data_path
+Warning (10238): Verilog Module Declaration warning at Sdram_Control_4Port.v(90): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "Sdram_Control_4Port"
+Info (12021): Found 1 design units, including 1 entities, in source file sdram_control_4port/sdram_control_4port.v
+    Info (12023): Found entity 1: Sdram_Control_4Port
+Info (12021): Found 1 design units, including 1 entities, in source file sdram_control_4port/sdram_fifo.v
+    Info (12023): Found entity 1: Sdram_FIFO
+Warning (12019): Can't analyze file -- file V/async_receiver.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file v/ccd_capture.v
+    Info (12023): Found entity 1: CCD_Capture
+Info (12021): Found 1 design units, including 1 entities, in source file v/i2c_ccd_config.v
+    Info (12023): Found entity 1: I2C_CCD_Config
+Info (12021): Found 1 design units, including 1 entities, in source file v/i2c_controller.v
+    Info (12023): Found entity 1: I2C_Controller
+Info (12021): Found 1 design units, including 1 entities, in source file v/line_buffer.v
+    Info (12023): Found entity 1: Line_Buffer
+Info (12021): Found 1 design units, including 1 entities, in source file v/raw2rgb.v
+    Info (12023): Found entity 1: RAW2RGB
+Info (12021): Found 1 design units, including 1 entities, in source file v/reset_delay.v
+    Info (12023): Found entity 1: Reset_Delay
+Info (12021): Found 1 design units, including 1 entities, in source file v/sdram_pll.v
+    Info (12023): Found entity 1: sdram_pll
+Info (12021): Found 1 design units, including 1 entities, in source file v/seg7_lut.v
+    Info (12023): Found entity 1: SEG7_LUT
+Info (12021): Found 1 design units, including 1 entities, in source file v/seg7_lut_8.v
+    Info (12023): Found entity 1: SEG7_LUT_8
+Info (12021): Found 1 design units, including 1 entities, in source file v/vga_controller.v
+    Info (12023): Found entity 1: VGA_Controller
+Info (12021): Found 1 design units, including 1 entities, in source file de0_d5m.v
+    Info (12023): Found entity 1: DE0_D5M
+Info (12021): Found 1 design units, including 1 entities, in source file v/top_de0_camera_mouse.bdf
+    Info (12023): Found entity 1: TOP_DE0_CAMERA_MOUSE
+Info (12021): Found 2 design units, including 1 entities, in source file vga_mux.vhd
+    Info (12022): Found design unit 1: vga_mux-SYN
+    Info (12023): Found entity 1: vga_mux
+Error (10228): Verilog HDL error at rtl_mgc_ioport_v2001.v(3): module "mgc_out_reg_pos" cannot be declared more than once File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 3
+Info (10499): HDL info at rtl_mgc_ioport_v2001.v(3): see declaration for object "mgc_out_reg_pos"
+Error (10112): Ignored design unit "mgc_out_reg_neg" at rtl_mgc_ioport_v2001.v(68) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 68
+Error (10112): Ignored design unit "mgc_out_reg" at rtl_mgc_ioport_v2001.v(133) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 133
+Error (10112): Ignored design unit "mgc_out_buf_wait" at rtl_mgc_ioport_v2001.v(210) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 210
+Error (10112): Ignored design unit "mgc_out_fifo_wait" at rtl_mgc_ioport_v2001.v(296) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 296
+Error (10112): Ignored design unit "mgc_out_fifo_wait_core" at rtl_mgc_ioport_v2001.v(353) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 353
+Error (10112): Ignored design unit "mgc_pipe" at rtl_mgc_ioport_v2001.v(644) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport_v2001.v Line: 644
+Info (12021): Found 0 design units, including 0 entities, in source file catapult_ip/mouse/rtl_mgc_ioport_v2001.v
+Error (10228): Verilog HDL error at rtl_mgc_ioport.v(13): module "mgc_in_wire" cannot be declared more than once File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 13
+Info (10499): HDL info at rtl_mgc_ioport.v(13): see declaration for object "mgc_in_wire"
+Error (10112): Ignored design unit "mgc_in_wire_en" at rtl_mgc_ioport.v(29) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 29
+Error (10112): Ignored design unit "mgc_in_wire_wait" at rtl_mgc_ioport.v(49) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 49
+Error (10112): Ignored design unit "mgc_chan_in" at rtl_mgc_ioport.v(72) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 72
+Error (10112): Ignored design unit "mgc_out_stdreg" at rtl_mgc_ioport.v(109) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 109
+Error (10112): Ignored design unit "mgc_out_stdreg_en" at rtl_mgc_ioport.v(125) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 125
+Error (10112): Ignored design unit "mgc_out_stdreg_wait" at rtl_mgc_ioport.v(145) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 145
+Error (10112): Ignored design unit "mgc_out_prereg_en" at rtl_mgc_ioport.v(169) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 169
+Error (10112): Ignored design unit "mgc_inout_stdreg_en" at rtl_mgc_ioport.v(191) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 191
+Error (10112): Ignored design unit "hid_tribuf" at rtl_mgc_ioport.v(217) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 217
+Error (10112): Ignored design unit "mgc_inout_stdreg_wait" at rtl_mgc_ioport.v(229) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 229
+Error (10112): Ignored design unit "mgc_inout_buf_wait" at rtl_mgc_ioport.v(269) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 269
+Error (10112): Ignored design unit "mgc_inout_fifo_wait" at rtl_mgc_ioport.v(339) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 339
+Error (10112): Ignored design unit "mgc_io_sync" at rtl_mgc_ioport.v(419) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 419
+Error (10112): Ignored design unit "mgc_bsync_rdy" at rtl_mgc_ioport.v(428) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 428
+Error (10112): Ignored design unit "mgc_bsync_vld" at rtl_mgc_ioport.v(443) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 443
+Error (10112): Ignored design unit "mgc_bsync_rv" at rtl_mgc_ioport.v(458) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 458
+Error (10112): Ignored design unit "mgc_sync" at rtl_mgc_ioport.v(479) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 479
+Error (10112): Ignored design unit "funccall_inout" at rtl_mgc_ioport.v(498) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl_mgc_ioport.v Line: 498
+Info (12021): Found 0 design units, including 0 entities, in source file catapult_ip/mouse/rtl_mgc_ioport.v
+Error (10228): Verilog HDL error at rtl.v(16): module "vga_mouse_square_core" cannot be declared more than once File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl.v Line: 16
+Info (10499): HDL info at rtl.v(16): see declaration for object "vga_mouse_square_core"
+Error (10112): Ignored design unit "vga_mouse_square" at rtl.v(110) due to previous errors File: H:/lab project/student_files_2015/prj2/quartus_proj/DE0_CAMERA_MOUSE/catapult_ip/mouse/rtl.v Line: 110
+Info (12021): Found 0 design units, including 0 entities, in source file catapult_ip/mouse/rtl.v
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 28 errors, 3 warnings
+    Error: Peak virtual memory: 479 megabytes
+    Error: Processing ended: Fri Mar 06 16:40:29 2015
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:02
+
+

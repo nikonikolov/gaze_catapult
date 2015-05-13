@@ -1,0 +1,684 @@
+
+# Program: Catapult University Version
+# Version: 2011a.126
+#    File: Nlview netlist
+
+module new "dot_product:core:fsm" "orig"
+load port {clk} input -attr xrf 1387 -attr oid 1 -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/clk}
+load port {en} input -attr xrf 1388 -attr oid 2 -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/en}
+load port {arst_n} input -attr xrf 1389 -attr oid 3 -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/arst_n}
+load portBus {fsm_output(5:0)} output 6 {fsm_output(5)} {fsm_output(4)} {fsm_output(3)} {fsm_output(2)} {fsm_output(1)} {fsm_output(0)} -attr xrf 1390 -attr oid 4 -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {clk} -attr xrf 1391 -attr oid 5
+load net {clk} -port {clk} -attr xrf 1392 -attr oid 6
+load net {en} -attr xrf 1393 -attr oid 7
+load net {en} -port {en} -attr xrf 1394 -attr oid 8
+load net {arst_n} -attr xrf 1395 -attr oid 9
+load net {arst_n} -port {arst_n} -attr xrf 1396 -attr oid 10
+load net {fsm_output(0)} -attr vt d
+load net {fsm_output(1)} -attr vt d
+load net {fsm_output(2)} -attr vt d
+load net {fsm_output(3)} -attr vt d
+load net {fsm_output(4)} -attr vt d
+load net {fsm_output(5)} -attr vt d
+load netBundle {fsm_output} 6 {fsm_output(0)} {fsm_output(1)} {fsm_output(2)} {fsm_output(3)} {fsm_output(4)} {fsm_output(5)} -attr xrf 1397 -attr oid 11 -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {fsm_output(0)} -port {fsm_output(0)} -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {fsm_output(1)} -port {fsm_output(1)} -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {fsm_output(2)} -port {fsm_output(2)} -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {fsm_output(3)} -port {fsm_output(3)} -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {fsm_output(4)} -port {fsm_output(4)} -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+load net {fsm_output(5)} -port {fsm_output(5)} -attr vt d -attr @path {/dot_product/dot_product:core/dot_product:core:fsm/fsm_output}
+### END MODULE 
+
+module new "dot_product:core" "orig"
+load port {clk} input -attr xrf 1398 -attr oid 12 -attr vt d -attr @path {/dot_product/dot_product:core/clk}
+load port {en} input -attr xrf 1399 -attr oid 13 -attr vt d -attr @path {/dot_product/dot_product:core/en}
+load port {arst_n} input -attr xrf 1400 -attr oid 14 -attr vt d -attr @path {/dot_product/dot_product:core/arst_n}
+load portBus {input_a:rsc:mgc_in_wire.d(7:0)} input 8 {input_a:rsc:mgc_in_wire.d(7)} {input_a:rsc:mgc_in_wire.d(6)} {input_a:rsc:mgc_in_wire.d(5)} {input_a:rsc:mgc_in_wire.d(4)} {input_a:rsc:mgc_in_wire.d(3)} {input_a:rsc:mgc_in_wire.d(2)} {input_a:rsc:mgc_in_wire.d(1)} {input_a:rsc:mgc_in_wire.d(0)} -attr xrf 1401 -attr oid 15 -attr vt d -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load portBus {input_b:rsc:mgc_in_wire.d(7:0)} input 8 {input_b:rsc:mgc_in_wire.d(7)} {input_b:rsc:mgc_in_wire.d(6)} {input_b:rsc:mgc_in_wire.d(5)} {input_b:rsc:mgc_in_wire.d(4)} {input_b:rsc:mgc_in_wire.d(3)} {input_b:rsc:mgc_in_wire.d(2)} {input_b:rsc:mgc_in_wire.d(1)} {input_b:rsc:mgc_in_wire.d(0)} -attr xrf 1402 -attr oid 16 -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load portBus {output:rsc:mgc_out_stdreg.d(7:0)} output 8 {output:rsc:mgc_out_stdreg.d(7)} {output:rsc:mgc_out_stdreg.d(6)} {output:rsc:mgc_out_stdreg.d(5)} {output:rsc:mgc_out_stdreg.d(4)} {output:rsc:mgc_out_stdreg.d(3)} {output:rsc:mgc_out_stdreg.d(2)} {output:rsc:mgc_out_stdreg.d(1)} {output:rsc:mgc_out_stdreg.d(0)} -attr xrf 1403 -attr oid 17 -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load symbol "mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8,0,8,0,8)" "INTERFACE" RTL(+) boxcolor 0 \
+     portBus {a(7:0)} input 8 {a(7)} {a(6)} {a(5)} {a(4)} {a(3)} {a(2)} {a(1)} {a(0)} \
+     portBus {b(7:0)} input 8 {b(7)} {b(6)} {b(5)} {b(4)} {b(3)} {b(2)} {b(1)} {b(0)} \
+     portBus {z(7:0)} output 8 {z(7)} {z(6)} {z(5)} {z(4)} {z(3)} {z(2)} {z(1)} {z(0)} \
+
+load symbol "dot_product:core:fsm" "orig" GEN \
+     port {clk#1} input \
+     port {en#1} input \
+     port {arst_n#1} input \
+     portBus {fsm_output(5:0)} output 6 {fsm_output(5)} {fsm_output(4)} {fsm_output(3)} {fsm_output(2)} {fsm_output(1)} {fsm_output(0)} \
+
+load symbol "add(8,-1,8,-1,8)" "INTERFACE" RTL(+) boxcolor 0 \
+     portBus {A(7:0)} input 8 {A(7)} {A(6)} {A(5)} {A(4)} {A(3)} {A(2)} {A(1)} {A(0)} \
+     portBus {B(7:0)} input 8 {B(7)} {B(6)} {B(5)} {B(4)} {B(3)} {B(2)} {B(1)} {B(0)} \
+     portBus {Z(7:0)} output 8 {Z(7)} {Z(6)} {Z(5)} {Z(4)} {Z(3)} {Z(2)} {Z(1)} {Z(0)} \
+
+load symbol "mux(2,8)" "INTERFACE" MUX boxcolor 0 \
+     portBus {A0(7:0)} input 8 {A0(7)} {A0(6)} {A0(5)} {A0(4)} {A0(3)} {A0(2)} {A0(1)} {A0(0)} \
+     portBus {A1(7:0)} input 8 {A1(7)} {A1(6)} {A1(5)} {A1(4)} {A1(3)} {A1(2)} {A1(1)} {A1(0)} \
+     portBus {S(0:0)} input.top 1 {S(0)} \
+     portBus {Z(7:0)} output 8 {Z(7)} {Z(6)} {Z(5)} {Z(4)} {Z(3)} {Z(2)} {Z(1)} {Z(0)} \
+
+load symbol "reg(8,1,1,-1,0)" "INTERFACE" GEN boxcolor 1 \
+     portBus {D(7:0)} input 8 {D(7)} {D(6)} {D(5)} {D(4)} {D(3)} {D(2)} {D(1)} {D(0)} \
+     portBus {DRa(7:0)} input 8 {DRa(7)} {DRa(6)} {DRa(5)} {DRa(4)} {DRa(3)} {DRa(2)} {DRa(1)} {DRa(0)} \
+     port {clk} input.clk \
+     portBus {en(0:0)} input 1 {en(0)} \
+     portBus {Ra(0:0)} input 1 {Ra(0)} \
+     portBus {Z(7:0)} output 8 {Z(7)} {Z(6)} {Z(5)} {Z(4)} {Z(3)} {Z(2)} {Z(1)} {Z(0)} \
+
+load symbol "mul(8,-1,8,-1,8)" "INTERFACE" RTL(*) boxcolor 0 \
+     portBus {A(7:0)} input 8 {A(7)} {A(6)} {A(5)} {A(4)} {A(3)} {A(2)} {A(1)} {A(0)} \
+     portBus {B(7:0)} input 8 {B(7)} {B(6)} {B(5)} {B(4)} {B(3)} {B(2)} {B(1)} {B(0)} \
+     portBus {Z(7:0)} output 8 {Z(7)} {Z(6)} {Z(5)} {Z(4)} {Z(3)} {Z(2)} {Z(1)} {Z(0)} \
+
+load net {MAC-4:mul.itm(0)} -attr vt d
+load net {MAC-4:mul.itm(1)} -attr vt d
+load net {MAC-4:mul.itm(2)} -attr vt d
+load net {MAC-4:mul.itm(3)} -attr vt d
+load net {MAC-4:mul.itm(4)} -attr vt d
+load net {MAC-4:mul.itm(5)} -attr vt d
+load net {MAC-4:mul.itm(6)} -attr vt d
+load net {MAC-4:mul.itm(7)} -attr vt d
+load netBundle {MAC-4:mul.itm} 8 {MAC-4:mul.itm(0)} {MAC-4:mul.itm(1)} {MAC-4:mul.itm(2)} {MAC-4:mul.itm(3)} {MAC-4:mul.itm(4)} {MAC-4:mul.itm(5)} {MAC-4:mul.itm(6)} {MAC-4:mul.itm(7)} -attr xrf 1404 -attr oid 18 -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC:acc#6.itm(0)} -attr vt d
+load net {MAC:acc#6.itm(1)} -attr vt d
+load net {MAC:acc#6.itm(2)} -attr vt d
+load net {MAC:acc#6.itm(3)} -attr vt d
+load net {MAC:acc#6.itm(4)} -attr vt d
+load net {MAC:acc#6.itm(5)} -attr vt d
+load net {MAC:acc#6.itm(6)} -attr vt d
+load net {MAC:acc#6.itm(7)} -attr vt d
+load netBundle {MAC:acc#6.itm} 8 {MAC:acc#6.itm(0)} {MAC:acc#6.itm(1)} {MAC:acc#6.itm(2)} {MAC:acc#6.itm(3)} {MAC:acc#6.itm(4)} {MAC:acc#6.itm(5)} {MAC:acc#6.itm(6)} {MAC:acc#6.itm(7)} -attr xrf 1405 -attr oid 19 -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc.itm(0)} -attr vt d
+load net {MAC:acc.itm(1)} -attr vt d
+load net {MAC:acc.itm(2)} -attr vt d
+load net {MAC:acc.itm(3)} -attr vt d
+load net {MAC:acc.itm(4)} -attr vt d
+load net {MAC:acc.itm(5)} -attr vt d
+load net {MAC:acc.itm(6)} -attr vt d
+load net {MAC:acc.itm(7)} -attr vt d
+load netBundle {MAC:acc.itm} 8 {MAC:acc.itm(0)} {MAC:acc.itm(1)} {MAC:acc.itm(2)} {MAC:acc.itm(3)} {MAC:acc.itm(4)} {MAC:acc.itm(5)} {MAC:acc.itm(6)} {MAC:acc.itm(7)} -attr xrf 1406 -attr oid 20 -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {z.out(0)} -attr vt d
+load net {z.out(1)} -attr vt d
+load net {z.out(2)} -attr vt d
+load net {z.out(3)} -attr vt d
+load net {z.out(4)} -attr vt d
+load net {z.out(5)} -attr vt d
+load net {z.out(6)} -attr vt d
+load net {z.out(7)} -attr vt d
+load netBundle {z.out} 8 {z.out(0)} {z.out(1)} {z.out(2)} {z.out(3)} {z.out(4)} {z.out(5)} {z.out(6)} {z.out(7)} -attr xrf 1407 -attr oid 21 -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {MAC-4:mul.itm#1(0)} -attr vt d
+load net {MAC-4:mul.itm#1(1)} -attr vt d
+load net {MAC-4:mul.itm#1(2)} -attr vt d
+load net {MAC-4:mul.itm#1(3)} -attr vt d
+load net {MAC-4:mul.itm#1(4)} -attr vt d
+load net {MAC-4:mul.itm#1(5)} -attr vt d
+load net {MAC-4:mul.itm#1(6)} -attr vt d
+load net {MAC-4:mul.itm#1(7)} -attr vt d
+load netBundle {MAC-4:mul.itm#1} 8 {MAC-4:mul.itm#1(0)} {MAC-4:mul.itm#1(1)} {MAC-4:mul.itm#1(2)} {MAC-4:mul.itm#1(3)} {MAC-4:mul.itm#1(4)} {MAC-4:mul.itm#1(5)} {MAC-4:mul.itm#1(6)} {MAC-4:mul.itm#1(7)} -attr xrf 1408 -attr oid 22 -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {mux.itm(0)} -attr vt d
+load net {mux.itm(1)} -attr vt d
+load net {mux.itm(2)} -attr vt d
+load net {mux.itm(3)} -attr vt d
+load net {mux.itm(4)} -attr vt d
+load net {mux.itm(5)} -attr vt d
+load net {mux.itm(6)} -attr vt d
+load net {mux.itm(7)} -attr vt d
+load netBundle {mux.itm} 8 {mux.itm(0)} {mux.itm(1)} {mux.itm(2)} {mux.itm(3)} {mux.itm(4)} {mux.itm(5)} {mux.itm(6)} {mux.itm(7)} -attr xrf 1409 -attr oid 23 -attr vt d -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {MAC-5:acc#3.itm(0)} -attr vt d
+load net {MAC-5:acc#3.itm(1)} -attr vt d
+load net {MAC-5:acc#3.itm(2)} -attr vt d
+load net {MAC-5:acc#3.itm(3)} -attr vt d
+load net {MAC-5:acc#3.itm(4)} -attr vt d
+load net {MAC-5:acc#3.itm(5)} -attr vt d
+load net {MAC-5:acc#3.itm(6)} -attr vt d
+load net {MAC-5:acc#3.itm(7)} -attr vt d
+load netBundle {MAC-5:acc#3.itm} 8 {MAC-5:acc#3.itm(0)} {MAC-5:acc#3.itm(1)} {MAC-5:acc#3.itm(2)} {MAC-5:acc#3.itm(3)} {MAC-5:acc#3.itm(4)} {MAC-5:acc#3.itm(5)} {MAC-5:acc#3.itm(6)} {MAC-5:acc#3.itm(7)} -attr xrf 1410 -attr oid 24 -attr vt d -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {mux#1.itm(0)} -attr vt d
+load net {mux#1.itm(1)} -attr vt d
+load net {mux#1.itm(2)} -attr vt d
+load net {mux#1.itm(3)} -attr vt d
+load net {mux#1.itm(4)} -attr vt d
+load net {mux#1.itm(5)} -attr vt d
+load net {mux#1.itm(6)} -attr vt d
+load net {mux#1.itm(7)} -attr vt d
+load netBundle {mux#1.itm} 8 {mux#1.itm(0)} {mux#1.itm(1)} {mux#1.itm(2)} {mux#1.itm(3)} {mux#1.itm(4)} {mux#1.itm(5)} {mux#1.itm(6)} {mux#1.itm(7)} -attr xrf 1411 -attr oid 25 -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#2.itm(0)} -attr vt d
+load net {mux#2.itm(1)} -attr vt d
+load net {mux#2.itm(2)} -attr vt d
+load net {mux#2.itm(3)} -attr vt d
+load net {mux#2.itm(4)} -attr vt d
+load net {mux#2.itm(5)} -attr vt d
+load net {mux#2.itm(6)} -attr vt d
+load net {mux#2.itm(7)} -attr vt d
+load netBundle {mux#2.itm} 8 {mux#2.itm(0)} {mux#2.itm(1)} {mux#2.itm(2)} {mux#2.itm(3)} {mux#2.itm(4)} {mux#2.itm(5)} {mux#2.itm(6)} {mux#2.itm(7)} -attr xrf 1412 -attr oid 26 -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {clk} -attr xrf 1413 -attr oid 27
+load net {clk} -port {clk} -attr xrf 1414 -attr oid 28
+load net {en} -attr xrf 1415 -attr oid 29
+load net {en} -port {en} -attr xrf 1416 -attr oid 30
+load net {arst_n} -attr xrf 1417 -attr oid 31
+load net {arst_n} -port {arst_n} -attr xrf 1418 -attr oid 32
+load net {input_a:rsc:mgc_in_wire.d(0)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(1)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(2)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(3)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(4)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(5)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(6)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(7)} -attr vt d
+load netBundle {input_a:rsc:mgc_in_wire.d} 8 {input_a:rsc:mgc_in_wire.d(0)} {input_a:rsc:mgc_in_wire.d(1)} {input_a:rsc:mgc_in_wire.d(2)} {input_a:rsc:mgc_in_wire.d(3)} {input_a:rsc:mgc_in_wire.d(4)} {input_a:rsc:mgc_in_wire.d(5)} {input_a:rsc:mgc_in_wire.d(6)} {input_a:rsc:mgc_in_wire.d(7)} -attr xrf 1419 -attr oid 33 -attr vt d -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(0)} -port {input_a:rsc:mgc_in_wire.d(0)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(1)} -port {input_a:rsc:mgc_in_wire.d(1)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(2)} -port {input_a:rsc:mgc_in_wire.d(2)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(3)} -port {input_a:rsc:mgc_in_wire.d(3)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(4)} -port {input_a:rsc:mgc_in_wire.d(4)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(5)} -port {input_a:rsc:mgc_in_wire.d(5)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(6)} -port {input_a:rsc:mgc_in_wire.d(6)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d(7)} -port {input_a:rsc:mgc_in_wire.d(7)} -attr vt d
+load netBundle {input_a:rsc:mgc_in_wire.d} 8 {input_a:rsc:mgc_in_wire.d(0)} {input_a:rsc:mgc_in_wire.d(1)} {input_a:rsc:mgc_in_wire.d(2)} {input_a:rsc:mgc_in_wire.d(3)} {input_a:rsc:mgc_in_wire.d(4)} {input_a:rsc:mgc_in_wire.d(5)} {input_a:rsc:mgc_in_wire.d(6)} {input_a:rsc:mgc_in_wire.d(7)} -attr xrf 1420 -attr oid 34 -attr vt d -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(0)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(1)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(2)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(3)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(4)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(5)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(6)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(7)} -attr vt d
+load netBundle {input_b:rsc:mgc_in_wire.d} 8 {input_b:rsc:mgc_in_wire.d(0)} {input_b:rsc:mgc_in_wire.d(1)} {input_b:rsc:mgc_in_wire.d(2)} {input_b:rsc:mgc_in_wire.d(3)} {input_b:rsc:mgc_in_wire.d(4)} {input_b:rsc:mgc_in_wire.d(5)} {input_b:rsc:mgc_in_wire.d(6)} {input_b:rsc:mgc_in_wire.d(7)} -attr xrf 1421 -attr oid 35 -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(0)} -port {input_b:rsc:mgc_in_wire.d(0)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(1)} -port {input_b:rsc:mgc_in_wire.d(1)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(2)} -port {input_b:rsc:mgc_in_wire.d(2)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(3)} -port {input_b:rsc:mgc_in_wire.d(3)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(4)} -port {input_b:rsc:mgc_in_wire.d(4)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(5)} -port {input_b:rsc:mgc_in_wire.d(5)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(6)} -port {input_b:rsc:mgc_in_wire.d(6)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d(7)} -port {input_b:rsc:mgc_in_wire.d(7)} -attr vt d
+load netBundle {input_b:rsc:mgc_in_wire.d} 8 {input_b:rsc:mgc_in_wire.d(0)} {input_b:rsc:mgc_in_wire.d(1)} {input_b:rsc:mgc_in_wire.d(2)} {input_b:rsc:mgc_in_wire.d(3)} {input_b:rsc:mgc_in_wire.d(4)} {input_b:rsc:mgc_in_wire.d(5)} {input_b:rsc:mgc_in_wire.d(6)} {input_b:rsc:mgc_in_wire.d(7)} -attr xrf 1422 -attr oid 36 -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {output:rsc:mgc_out_stdreg.d(0)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(1)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(2)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(3)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(4)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(5)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(6)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d(7)} -attr vt d
+load netBundle {output:rsc:mgc_out_stdreg.d} 8 {output:rsc:mgc_out_stdreg.d(0)} {output:rsc:mgc_out_stdreg.d(1)} {output:rsc:mgc_out_stdreg.d(2)} {output:rsc:mgc_out_stdreg.d(3)} {output:rsc:mgc_out_stdreg.d(4)} {output:rsc:mgc_out_stdreg.d(5)} {output:rsc:mgc_out_stdreg.d(6)} {output:rsc:mgc_out_stdreg.d(7)} -attr xrf 1423 -attr oid 37 -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(0)} -port {output:rsc:mgc_out_stdreg.d(0)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(1)} -port {output:rsc:mgc_out_stdreg.d(1)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(2)} -port {output:rsc:mgc_out_stdreg.d(2)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(3)} -port {output:rsc:mgc_out_stdreg.d(3)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(4)} -port {output:rsc:mgc_out_stdreg.d(4)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(5)} -port {output:rsc:mgc_out_stdreg.d(5)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(6)} -port {output:rsc:mgc_out_stdreg.d(6)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(7)} -port {output:rsc:mgc_out_stdreg.d(7)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load inst "dot_product:core:fsm:inst" "dot_product:core:fsm" "orig" -attr xrf 1424 -attr oid 38 -attr @path {/dot_product/dot_product:core/dot_product:core:fsm:inst} -attr area 0.001000 -attr hier "/dot_product/dot_product:core/dot_product:core:fsm" -pg 1 -lvl 3
+load net {clk} -pin  "dot_product:core:fsm:inst" {clk#1} -attr xrf 1425 -attr oid 39 -attr @path {/dot_product/dot_product:core/clk}
+load net {en} -pin  "dot_product:core:fsm:inst" {en#1} -attr xrf 1426 -attr oid 40 -attr @path {/dot_product/dot_product:core/en}
+load net {arst_n} -pin  "dot_product:core:fsm:inst" {arst_n#1} -attr xrf 1427 -attr oid 41 -attr @path {/dot_product/dot_product:core/arst_n}
+load net {fsm_output#1(0)} -pin  "dot_product:core:fsm:inst" {fsm_output(0)} -attr @path {/dot_product/dot_product:core/fsm_output}
+load net {fsm_output#1(1)} -pin  "dot_product:core:fsm:inst" {fsm_output(1)} -attr @path {/dot_product/dot_product:core/fsm_output}
+load net {fsm_output#1(2)} -pin  "dot_product:core:fsm:inst" {fsm_output(2)} -attr @path {/dot_product/dot_product:core/fsm_output}
+load net {fsm_output#1(3)} -pin  "dot_product:core:fsm:inst" {fsm_output(3)} -attr @path {/dot_product/dot_product:core/fsm_output}
+load net {fsm_output#1(4)} -pin  "dot_product:core:fsm:inst" {fsm_output(4)} -attr @path {/dot_product/dot_product:core/fsm_output}
+load net {fsm_output#1(5)} -pin  "dot_product:core:fsm:inst" {fsm_output(5)} -attr @path {/dot_product/dot_product:core/fsm_output}
+load inst "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" "mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8,0,8,0,8)" "INTERFACE" -attr xrf 1428 -attr oid 42 -attr vt d -attr @path {/dot_product/dot_product:core/MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8,0,8,0,8)} -attr area 9.258614 -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8,0,8,0,8)"
+load net {mux#2.itm(0)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(0)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(1)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(1)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(2)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(2)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(3)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(3)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(4)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(4)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(5)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(5)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(6)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(6)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(7)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {a(7)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {MAC-4:mul.itm#1(0)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(1)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(2)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(3)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(4)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(5)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(6)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(7)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {b(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {z.out(0)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(1)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(2)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(3)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(4)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(5)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(6)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(7)} -pin  "MAC:mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8_0_8_0_8)" {z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load inst "MAC-5:acc#3" "add(8,-1,8,-1,8)" "INTERFACE" -attr xrf 1429 -attr oid 43 -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3} -attr area 9.258614 -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_Altera-Cyclone-III-6_beh_psr.mgc_add(8,0,8,0,8)"
+load net {MAC:acc.itm(0)} -pin  "MAC-5:acc#3" {A(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(1)} -pin  "MAC-5:acc#3" {A(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(2)} -pin  "MAC-5:acc#3" {A(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(3)} -pin  "MAC-5:acc#3" {A(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(4)} -pin  "MAC-5:acc#3" {A(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(5)} -pin  "MAC-5:acc#3" {A(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(6)} -pin  "MAC-5:acc#3" {A(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(7)} -pin  "MAC-5:acc#3" {A(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {z.out(0)} -pin  "MAC-5:acc#3" {B(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(1)} -pin  "MAC-5:acc#3" {B(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(2)} -pin  "MAC-5:acc#3" {B(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(3)} -pin  "MAC-5:acc#3" {B(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(4)} -pin  "MAC-5:acc#3" {B(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(5)} -pin  "MAC-5:acc#3" {B(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(6)} -pin  "MAC-5:acc#3" {B(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(7)} -pin  "MAC-5:acc#3" {B(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/z.out}
+load net {MAC-5:acc#3.itm(0)} -pin  "MAC-5:acc#3" {Z(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(1)} -pin  "MAC-5:acc#3" {Z(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(2)} -pin  "MAC-5:acc#3" {Z(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(3)} -pin  "MAC-5:acc#3" {Z(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(4)} -pin  "MAC-5:acc#3" {Z(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(5)} -pin  "MAC-5:acc#3" {Z(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(6)} -pin  "MAC-5:acc#3" {Z(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(7)} -pin  "MAC-5:acc#3" {Z(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load inst "mux" "mux(2,8)" "INTERFACE" -attr xrf 1430 -attr oid 44 -attr vt dc -attr @path {/dot_product/dot_product:core/mux} -attr area 7.356384 -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_Altera-Cyclone-III-6_beh_psr.mgc_mux(8,1,2)"
+load net {MAC-5:acc#3.itm(0)} -pin  "mux" {A0(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(1)} -pin  "mux" {A0(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(2)} -pin  "mux" {A0(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(3)} -pin  "mux" {A0(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(4)} -pin  "mux" {A0(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(5)} -pin  "mux" {A0(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(6)} -pin  "mux" {A0(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {MAC-5:acc#3.itm(7)} -pin  "mux" {A0(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-5:acc#3.itm}
+load net {output:rsc:mgc_out_stdreg.d(0)} -pin  "mux" {A1(0)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(1)} -pin  "mux" {A1(1)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(2)} -pin  "mux" {A1(2)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(3)} -pin  "mux" {A1(3)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(4)} -pin  "mux" {A1(4)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(5)} -pin  "mux" {A1(5)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(6)} -pin  "mux" {A1(6)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(7)} -pin  "mux" {A1(7)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {fsm_output#1(4)} -pin  "mux" {S(0)} -attr @path {/dot_product/dot_product:core/slc(fsm_output)#4.itm}
+load net {mux.itm(0)} -pin  "mux" {Z(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(1)} -pin  "mux" {Z(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(2)} -pin  "mux" {Z(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(3)} -pin  "mux" {Z(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(4)} -pin  "mux" {Z(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(5)} -pin  "mux" {Z(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(6)} -pin  "mux" {Z(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(7)} -pin  "mux" {Z(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load inst "reg(output:rsc:mgc_out_stdreg.d)" "reg(8,1,1,-1,0)" "INTERFACE" -attr xrf 1431 -attr oid 45 -attr vt dc -attr @path {/dot_product/dot_product:core/reg(output:rsc:mgc_out_stdreg.d)}
+load net {mux.itm(0)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(1)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(2)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(3)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(4)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(5)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(6)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {mux.itm(7)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {D(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/mux.itm}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(0)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(1)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(2)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(3)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(4)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(5)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(6)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {DRa(7)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {clk} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {clk} -attr xrf 1432 -attr oid 46 -attr @path {/dot_product/dot_product:core/clk}
+load net {en} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {en(0)} -attr @path {/dot_product/dot_product:core/en}
+load net {arst_n} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Ra(0)} -attr @path {/dot_product/dot_product:core/arst_n}
+load net {output:rsc:mgc_out_stdreg.d(0)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(1)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(2)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(3)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(4)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(5)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(6)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d(7)} -pin  "reg(output:rsc:mgc_out_stdreg.d)" {Z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/output:rsc:mgc_out_stdreg.d}
+load inst "reg(MAC-4:mul.itm)" "reg(8,1,1,-1,0)" "INTERFACE" -attr xrf 1433 -attr oid 47 -attr vt d -attr @path {/dot_product/dot_product:core/reg(MAC-4:mul.itm)}
+load net {MAC-4:mul.itm#1(0)} -pin  "reg(MAC-4:mul.itm)" {D(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(1)} -pin  "reg(MAC-4:mul.itm)" {D(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(2)} -pin  "reg(MAC-4:mul.itm)" {D(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(3)} -pin  "reg(MAC-4:mul.itm)" {D(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(4)} -pin  "reg(MAC-4:mul.itm)" {D(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(5)} -pin  "reg(MAC-4:mul.itm)" {D(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(6)} -pin  "reg(MAC-4:mul.itm)" {D(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(7)} -pin  "reg(MAC-4:mul.itm)" {D(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(0)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(1)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(2)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(3)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(4)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(5)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(6)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC-4:mul.itm)" {DRa(7)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {clk} -pin  "reg(MAC-4:mul.itm)" {clk} -attr xrf 1434 -attr oid 48 -attr @path {/dot_product/dot_product:core/clk}
+load net {en} -pin  "reg(MAC-4:mul.itm)" {en(0)} -attr @path {/dot_product/dot_product:core/en}
+load net {arst_n} -pin  "reg(MAC-4:mul.itm)" {Ra(0)} -attr @path {/dot_product/dot_product:core/arst_n}
+load net {MAC-4:mul.itm(0)} -pin  "reg(MAC-4:mul.itm)" {Z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(1)} -pin  "reg(MAC-4:mul.itm)" {Z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(2)} -pin  "reg(MAC-4:mul.itm)" {Z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(3)} -pin  "reg(MAC-4:mul.itm)" {Z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(4)} -pin  "reg(MAC-4:mul.itm)" {Z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(5)} -pin  "reg(MAC-4:mul.itm)" {Z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(6)} -pin  "reg(MAC-4:mul.itm)" {Z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(7)} -pin  "reg(MAC-4:mul.itm)" {Z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load inst "reg(MAC:acc#6.itm)" "reg(8,1,1,-1,0)" "INTERFACE" -attr xrf 1435 -attr oid 49 -attr vt d -attr @path {/dot_product/dot_product:core/reg(MAC:acc#6.itm)}
+load net {z.out(0)} -pin  "reg(MAC:acc#6.itm)" {D(0)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(1)} -pin  "reg(MAC:acc#6.itm)" {D(1)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(2)} -pin  "reg(MAC:acc#6.itm)" {D(2)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(3)} -pin  "reg(MAC:acc#6.itm)" {D(3)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(4)} -pin  "reg(MAC:acc#6.itm)" {D(4)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(5)} -pin  "reg(MAC:acc#6.itm)" {D(5)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(6)} -pin  "reg(MAC:acc#6.itm)" {D(6)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(7)} -pin  "reg(MAC:acc#6.itm)" {D(7)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(0)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(1)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(2)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(3)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(4)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(5)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(6)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc#6.itm)" {DRa(7)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {clk} -pin  "reg(MAC:acc#6.itm)" {clk} -attr xrf 1436 -attr oid 50 -attr @path {/dot_product/dot_product:core/clk}
+load net {en} -pin  "reg(MAC:acc#6.itm)" {en(0)} -attr @path {/dot_product/dot_product:core/en}
+load net {arst_n} -pin  "reg(MAC:acc#6.itm)" {Ra(0)} -attr @path {/dot_product/dot_product:core/arst_n}
+load net {MAC:acc#6.itm(0)} -pin  "reg(MAC:acc#6.itm)" {Z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(1)} -pin  "reg(MAC:acc#6.itm)" {Z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(2)} -pin  "reg(MAC:acc#6.itm)" {Z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(3)} -pin  "reg(MAC:acc#6.itm)" {Z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(4)} -pin  "reg(MAC:acc#6.itm)" {Z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(5)} -pin  "reg(MAC:acc#6.itm)" {Z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(6)} -pin  "reg(MAC:acc#6.itm)" {Z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(7)} -pin  "reg(MAC:acc#6.itm)" {Z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load inst "mux#1" "mux(2,8)" "INTERFACE" -attr xrf 1437 -attr oid 51 -attr vt d -attr @path {/dot_product/dot_product:core/mux#1} -attr area 7.356384 -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_Altera-Cyclone-III-6_beh_psr.mgc_mux(8,1,2)"
+load net {z.out(0)} -pin  "mux#1" {A0(0)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(1)} -pin  "mux#1" {A0(1)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(2)} -pin  "mux#1" {A0(2)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(3)} -pin  "mux#1" {A0(3)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(4)} -pin  "mux#1" {A0(4)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(5)} -pin  "mux#1" {A0(5)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(6)} -pin  "mux#1" {A0(6)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {z.out(7)} -pin  "mux#1" {A0(7)} -attr vt d -attr @path {/dot_product/dot_product:core/z.out}
+load net {MAC:acc.itm(0)} -pin  "mux#1" {A1(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(1)} -pin  "mux#1" {A1(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(2)} -pin  "mux#1" {A1(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(3)} -pin  "mux#1" {A1(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(4)} -pin  "mux#1" {A1(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(5)} -pin  "mux#1" {A1(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(6)} -pin  "mux#1" {A1(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(7)} -pin  "mux#1" {A1(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {fsm_output#1(2)} -pin  "mux#1" {S(0)} -attr @path {/dot_product/dot_product:core/slc(fsm_output)#6.itm}
+load net {mux#1.itm(0)} -pin  "mux#1" {Z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(1)} -pin  "mux#1" {Z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(2)} -pin  "mux#1" {Z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(3)} -pin  "mux#1" {Z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(4)} -pin  "mux#1" {Z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(5)} -pin  "mux#1" {Z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(6)} -pin  "mux#1" {Z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(7)} -pin  "mux#1" {Z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load inst "reg(MAC:acc.itm)" "reg(8,1,1,-1,0)" "INTERFACE" -attr xrf 1438 -attr oid 52 -attr vt d -attr @path {/dot_product/dot_product:core/reg(MAC:acc.itm)}
+load net {mux#1.itm(0)} -pin  "reg(MAC:acc.itm)" {D(0)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(1)} -pin  "reg(MAC:acc.itm)" {D(1)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(2)} -pin  "reg(MAC:acc.itm)" {D(2)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(3)} -pin  "reg(MAC:acc.itm)" {D(3)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(4)} -pin  "reg(MAC:acc.itm)" {D(4)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(5)} -pin  "reg(MAC:acc.itm)" {D(5)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(6)} -pin  "reg(MAC:acc.itm)" {D(6)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {mux#1.itm(7)} -pin  "reg(MAC:acc.itm)" {D(7)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#1.itm}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(0)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(1)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(2)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(3)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(4)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(5)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(6)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {GND} -pin  "reg(MAC:acc.itm)" {DRa(7)} -attr @path {/dot_product/dot_product:core/C0_8}
+load net {clk} -pin  "reg(MAC:acc.itm)" {clk} -attr xrf 1439 -attr oid 53 -attr @path {/dot_product/dot_product:core/clk}
+load net {en} -pin  "reg(MAC:acc.itm)" {en(0)} -attr @path {/dot_product/dot_product:core/en}
+load net {arst_n} -pin  "reg(MAC:acc.itm)" {Ra(0)} -attr @path {/dot_product/dot_product:core/arst_n}
+load net {MAC:acc.itm(0)} -pin  "reg(MAC:acc.itm)" {Z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(1)} -pin  "reg(MAC:acc.itm)" {Z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(2)} -pin  "reg(MAC:acc.itm)" {Z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(3)} -pin  "reg(MAC:acc.itm)" {Z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(4)} -pin  "reg(MAC:acc.itm)" {Z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(5)} -pin  "reg(MAC:acc.itm)" {Z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(6)} -pin  "reg(MAC:acc.itm)" {Z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load net {MAC:acc.itm(7)} -pin  "reg(MAC:acc.itm)" {Z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc.itm}
+load inst "MAC-4:mul" "mul(8,-1,8,-1,8)" "INTERFACE" -attr xrf 1440 -attr oid 54 -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul} -attr area 330.249922 -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_Altera-Cyclone-III-6_beh_psr.mgc_mul(8,0,8,0,8)"
+load net {input_a:rsc:mgc_in_wire.d(0)} -pin  "MAC-4:mul" {A(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(1)} -pin  "MAC-4:mul" {A(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(2)} -pin  "MAC-4:mul" {A(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(3)} -pin  "MAC-4:mul" {A(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(4)} -pin  "MAC-4:mul" {A(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(5)} -pin  "MAC-4:mul" {A(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(6)} -pin  "MAC-4:mul" {A(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d(7)} -pin  "MAC-4:mul" {A(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/input_a:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(0)} -pin  "MAC-4:mul" {B(0)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(1)} -pin  "MAC-4:mul" {B(1)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(2)} -pin  "MAC-4:mul" {B(2)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(3)} -pin  "MAC-4:mul" {B(3)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(4)} -pin  "MAC-4:mul" {B(4)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(5)} -pin  "MAC-4:mul" {B(5)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(6)} -pin  "MAC-4:mul" {B(6)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d(7)} -pin  "MAC-4:mul" {B(7)} -attr vt d -attr @path {/dot_product/dot_product:core/input_b:rsc:mgc_in_wire.d}
+load net {MAC-4:mul.itm#1(0)} -pin  "MAC-4:mul" {Z(0)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(1)} -pin  "MAC-4:mul" {Z(1)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(2)} -pin  "MAC-4:mul" {Z(2)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(3)} -pin  "MAC-4:mul" {Z(3)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(4)} -pin  "MAC-4:mul" {Z(4)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(5)} -pin  "MAC-4:mul" {Z(5)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(6)} -pin  "MAC-4:mul" {Z(6)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load net {MAC-4:mul.itm#1(7)} -pin  "MAC-4:mul" {Z(7)} -attr vt dc -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm#1}
+load inst "mux#2" "mux(2,8)" "INTERFACE" -attr xrf 1441 -attr oid 55 -attr vt d -attr @path {/dot_product/dot_product:core/mux#2} -attr area 7.356384 -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_Altera-Cyclone-III-6_beh_psr.mgc_mux(8,1,2)"
+load net {MAC:acc#6.itm(0)} -pin  "mux#2" {A0(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(1)} -pin  "mux#2" {A0(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(2)} -pin  "mux#2" {A0(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(3)} -pin  "mux#2" {A0(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(4)} -pin  "mux#2" {A0(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(5)} -pin  "mux#2" {A0(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(6)} -pin  "mux#2" {A0(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC:acc#6.itm(7)} -pin  "mux#2" {A0(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC:acc#6.itm}
+load net {MAC-4:mul.itm(0)} -pin  "mux#2" {A1(0)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(1)} -pin  "mux#2" {A1(1)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(2)} -pin  "mux#2" {A1(2)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(3)} -pin  "mux#2" {A1(3)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(4)} -pin  "mux#2" {A1(4)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(5)} -pin  "mux#2" {A1(5)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(6)} -pin  "mux#2" {A1(6)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {MAC-4:mul.itm(7)} -pin  "mux#2" {A1(7)} -attr vt d -attr @path {/dot_product/dot_product:core/MAC-4:mul.itm}
+load net {fsm_output#1(2)} -pin  "mux#2" {S(0)} -attr @path {/dot_product/dot_product:core/slc(fsm_output)#2.itm}
+load net {mux#2.itm(0)} -pin  "mux#2" {Z(0)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(1)} -pin  "mux#2" {Z(1)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(2)} -pin  "mux#2" {Z(2)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(3)} -pin  "mux#2" {Z(3)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(4)} -pin  "mux#2" {Z(4)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(5)} -pin  "mux#2" {Z(5)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(6)} -pin  "mux#2" {Z(6)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+load net {mux#2.itm(7)} -pin  "mux#2" {Z(7)} -attr vt d -attr @path {/dot_product/dot_product:core/mux#2.itm}
+### END MODULE 
+
+module new "dot_product" "orig"
+load portBus {input_a:rsc.z(7:0)} input 8 {input_a:rsc.z(7)} {input_a:rsc.z(6)} {input_a:rsc.z(5)} {input_a:rsc.z(4)} {input_a:rsc.z(3)} {input_a:rsc.z(2)} {input_a:rsc.z(1)} {input_a:rsc.z(0)} -attr xrf 1442 -attr oid 56 -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load portBus {input_b:rsc.z(7:0)} input 8 {input_b:rsc.z(7)} {input_b:rsc.z(6)} {input_b:rsc.z(5)} {input_b:rsc.z(4)} {input_b:rsc.z(3)} {input_b:rsc.z(2)} {input_b:rsc.z(1)} {input_b:rsc.z(0)} -attr xrf 1443 -attr oid 57 -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load portBus {output:rsc.z(7:0)} output 8 {output:rsc.z(7)} {output:rsc.z(6)} {output:rsc.z(5)} {output:rsc.z(4)} {output:rsc.z(3)} {output:rsc.z(2)} {output:rsc.z(1)} {output:rsc.z(0)} -attr xrf 1444 -attr oid 58 -attr vt d -attr @path {/dot_product/output:rsc.z}
+load port {clk} input -attr xrf 1445 -attr oid 59 -attr vt d -attr @path {/dot_product/clk}
+load port {en} input -attr xrf 1446 -attr oid 60 -attr vt d -attr @path {/dot_product/en}
+load port {arst_n} input -attr xrf 1447 -attr oid 61 -attr vt d -attr @path {/dot_product/arst_n}
+load symbol "mgc_ioport.mgc_in_wire(1,8)" "INTERFACE" GEN boxcolor 0 \
+     portBus {d(7:0)} output 8 {d(7)} {d(6)} {d(5)} {d(4)} {d(3)} {d(2)} {d(1)} {d(0)} \
+     portBus {z(7:0)} input 8 {z(7)} {z(6)} {z(5)} {z(4)} {z(3)} {z(2)} {z(1)} {z(0)} \
+
+load symbol "mgc_ioport.mgc_in_wire(2,8)" "INTERFACE" GEN boxcolor 0 \
+     portBus {d(7:0)} output 8 {d(7)} {d(6)} {d(5)} {d(4)} {d(3)} {d(2)} {d(1)} {d(0)} \
+     portBus {z(7:0)} input 8 {z(7)} {z(6)} {z(5)} {z(4)} {z(3)} {z(2)} {z(1)} {z(0)} \
+
+load symbol "mgc_ioport.mgc_out_stdreg(3,8)" "INTERFACE" GEN boxcolor 0 \
+     portBus {d(7:0)} input 8 {d(7)} {d(6)} {d(5)} {d(4)} {d(3)} {d(2)} {d(1)} {d(0)} \
+     portBus {z(7:0)} output 8 {z(7)} {z(6)} {z(5)} {z(4)} {z(3)} {z(2)} {z(1)} {z(0)} \
+
+load symbol "dot_product:core" "orig" GEN \
+     port {clk#1} input \
+     port {en#1} input \
+     port {arst_n#1} input \
+     portBus {input_a:rsc:mgc_in_wire.d(7:0)} input 8 {input_a:rsc:mgc_in_wire.d(7)} {input_a:rsc:mgc_in_wire.d(6)} {input_a:rsc:mgc_in_wire.d(5)} {input_a:rsc:mgc_in_wire.d(4)} {input_a:rsc:mgc_in_wire.d(3)} {input_a:rsc:mgc_in_wire.d(2)} {input_a:rsc:mgc_in_wire.d(1)} {input_a:rsc:mgc_in_wire.d(0)} \
+     portBus {input_b:rsc:mgc_in_wire.d(7:0)} input 8 {input_b:rsc:mgc_in_wire.d(7)} {input_b:rsc:mgc_in_wire.d(6)} {input_b:rsc:mgc_in_wire.d(5)} {input_b:rsc:mgc_in_wire.d(4)} {input_b:rsc:mgc_in_wire.d(3)} {input_b:rsc:mgc_in_wire.d(2)} {input_b:rsc:mgc_in_wire.d(1)} {input_b:rsc:mgc_in_wire.d(0)} \
+     portBus {output:rsc:mgc_out_stdreg.d(7:0)} output 8 {output:rsc:mgc_out_stdreg.d(7)} {output:rsc:mgc_out_stdreg.d(6)} {output:rsc:mgc_out_stdreg.d(5)} {output:rsc:mgc_out_stdreg.d(4)} {output:rsc:mgc_out_stdreg.d(3)} {output:rsc:mgc_out_stdreg.d(2)} {output:rsc:mgc_out_stdreg.d(1)} {output:rsc:mgc_out_stdreg.d(0)} \
+
+load net {input_a:rsc:mgc_in_wire.d#1(0)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(1)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(2)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(3)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(4)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(5)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(6)} -attr vt d
+load net {input_a:rsc:mgc_in_wire.d#1(7)} -attr vt d
+load netBundle {input_a:rsc:mgc_in_wire.d#1} 8 {input_a:rsc:mgc_in_wire.d#1(0)} {input_a:rsc:mgc_in_wire.d#1(1)} {input_a:rsc:mgc_in_wire.d#1(2)} {input_a:rsc:mgc_in_wire.d#1(3)} {input_a:rsc:mgc_in_wire.d#1(4)} {input_a:rsc:mgc_in_wire.d#1(5)} {input_a:rsc:mgc_in_wire.d#1(6)} {input_a:rsc:mgc_in_wire.d#1(7)} -attr xrf 1448 -attr oid 62 -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(0)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(1)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(2)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(3)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(4)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(5)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(6)} -attr vt d
+load net {input_b:rsc:mgc_in_wire.d#1(7)} -attr vt d
+load netBundle {input_b:rsc:mgc_in_wire.d#1} 8 {input_b:rsc:mgc_in_wire.d#1(0)} {input_b:rsc:mgc_in_wire.d#1(1)} {input_b:rsc:mgc_in_wire.d#1(2)} {input_b:rsc:mgc_in_wire.d#1(3)} {input_b:rsc:mgc_in_wire.d#1(4)} {input_b:rsc:mgc_in_wire.d#1(5)} {input_b:rsc:mgc_in_wire.d#1(6)} {input_b:rsc:mgc_in_wire.d#1(7)} -attr xrf 1449 -attr oid 63 -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {output:rsc:mgc_out_stdreg.d#1(0)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(1)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(2)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(3)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(4)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(5)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(6)} -attr vt d
+load net {output:rsc:mgc_out_stdreg.d#1(7)} -attr vt d
+load netBundle {output:rsc:mgc_out_stdreg.d#1} 8 {output:rsc:mgc_out_stdreg.d#1(0)} {output:rsc:mgc_out_stdreg.d#1(1)} {output:rsc:mgc_out_stdreg.d#1(2)} {output:rsc:mgc_out_stdreg.d#1(3)} {output:rsc:mgc_out_stdreg.d#1(4)} {output:rsc:mgc_out_stdreg.d#1(5)} {output:rsc:mgc_out_stdreg.d#1(6)} {output:rsc:mgc_out_stdreg.d#1(7)} -attr xrf 1450 -attr oid 64 -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {input_a:rsc.z(0)} -attr vt d
+load net {input_a:rsc.z(1)} -attr vt d
+load net {input_a:rsc.z(2)} -attr vt d
+load net {input_a:rsc.z(3)} -attr vt d
+load net {input_a:rsc.z(4)} -attr vt d
+load net {input_a:rsc.z(5)} -attr vt d
+load net {input_a:rsc.z(6)} -attr vt d
+load net {input_a:rsc.z(7)} -attr vt d
+load netBundle {input_a:rsc.z} 8 {input_a:rsc.z(0)} {input_a:rsc.z(1)} {input_a:rsc.z(2)} {input_a:rsc.z(3)} {input_a:rsc.z(4)} {input_a:rsc.z(5)} {input_a:rsc.z(6)} {input_a:rsc.z(7)} -attr xrf 1451 -attr oid 65 -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(0)} -port {input_a:rsc.z(0)} -attr vt d
+load net {input_a:rsc.z(1)} -port {input_a:rsc.z(1)} -attr vt d
+load net {input_a:rsc.z(2)} -port {input_a:rsc.z(2)} -attr vt d
+load net {input_a:rsc.z(3)} -port {input_a:rsc.z(3)} -attr vt d
+load net {input_a:rsc.z(4)} -port {input_a:rsc.z(4)} -attr vt d
+load net {input_a:rsc.z(5)} -port {input_a:rsc.z(5)} -attr vt d
+load net {input_a:rsc.z(6)} -port {input_a:rsc.z(6)} -attr vt d
+load net {input_a:rsc.z(7)} -port {input_a:rsc.z(7)} -attr vt d
+load netBundle {input_a:rsc.z} 8 {input_a:rsc.z(0)} {input_a:rsc.z(1)} {input_a:rsc.z(2)} {input_a:rsc.z(3)} {input_a:rsc.z(4)} {input_a:rsc.z(5)} {input_a:rsc.z(6)} {input_a:rsc.z(7)} -attr xrf 1452 -attr oid 66 -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_b:rsc.z(0)} -attr vt d
+load net {input_b:rsc.z(1)} -attr vt d
+load net {input_b:rsc.z(2)} -attr vt d
+load net {input_b:rsc.z(3)} -attr vt d
+load net {input_b:rsc.z(4)} -attr vt d
+load net {input_b:rsc.z(5)} -attr vt d
+load net {input_b:rsc.z(6)} -attr vt d
+load net {input_b:rsc.z(7)} -attr vt d
+load netBundle {input_b:rsc.z} 8 {input_b:rsc.z(0)} {input_b:rsc.z(1)} {input_b:rsc.z(2)} {input_b:rsc.z(3)} {input_b:rsc.z(4)} {input_b:rsc.z(5)} {input_b:rsc.z(6)} {input_b:rsc.z(7)} -attr xrf 1453 -attr oid 67 -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(0)} -port {input_b:rsc.z(0)} -attr vt d
+load net {input_b:rsc.z(1)} -port {input_b:rsc.z(1)} -attr vt d
+load net {input_b:rsc.z(2)} -port {input_b:rsc.z(2)} -attr vt d
+load net {input_b:rsc.z(3)} -port {input_b:rsc.z(3)} -attr vt d
+load net {input_b:rsc.z(4)} -port {input_b:rsc.z(4)} -attr vt d
+load net {input_b:rsc.z(5)} -port {input_b:rsc.z(5)} -attr vt d
+load net {input_b:rsc.z(6)} -port {input_b:rsc.z(6)} -attr vt d
+load net {input_b:rsc.z(7)} -port {input_b:rsc.z(7)} -attr vt d
+load netBundle {input_b:rsc.z} 8 {input_b:rsc.z(0)} {input_b:rsc.z(1)} {input_b:rsc.z(2)} {input_b:rsc.z(3)} {input_b:rsc.z(4)} {input_b:rsc.z(5)} {input_b:rsc.z(6)} {input_b:rsc.z(7)} -attr xrf 1454 -attr oid 68 -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {output:rsc.z(0)} -attr vt d
+load net {output:rsc.z(1)} -attr vt d
+load net {output:rsc.z(2)} -attr vt d
+load net {output:rsc.z(3)} -attr vt d
+load net {output:rsc.z(4)} -attr vt d
+load net {output:rsc.z(5)} -attr vt d
+load net {output:rsc.z(6)} -attr vt d
+load net {output:rsc.z(7)} -attr vt d
+load netBundle {output:rsc.z} 8 {output:rsc.z(0)} {output:rsc.z(1)} {output:rsc.z(2)} {output:rsc.z(3)} {output:rsc.z(4)} {output:rsc.z(5)} {output:rsc.z(6)} {output:rsc.z(7)} -attr xrf 1455 -attr oid 69 -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(0)} -port {output:rsc.z(0)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(1)} -port {output:rsc.z(1)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(2)} -port {output:rsc.z(2)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(3)} -port {output:rsc.z(3)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(4)} -port {output:rsc.z(4)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(5)} -port {output:rsc.z(5)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(6)} -port {output:rsc.z(6)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(7)} -port {output:rsc.z(7)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {clk} -attr xrf 1456 -attr oid 70
+load net {clk} -port {clk} -attr xrf 1457 -attr oid 71
+load net {en} -attr xrf 1458 -attr oid 72
+load net {en} -port {en} -attr xrf 1459 -attr oid 73
+load net {arst_n} -attr xrf 1460 -attr oid 74
+load net {arst_n} -port {arst_n} -attr xrf 1461 -attr oid 75
+load inst "dot_product:core:inst" "dot_product:core" "orig" -attr xrf 1462 -attr oid 76 -attr vt dc -attr @path {/dot_product/dot_product:core:inst} -attr area 370.837302 -attr delay 3.064172 -attr hier "/dot_product/dot_product:core" -pg 1 -lvl 5
+load net {clk} -pin  "dot_product:core:inst" {clk#1} -attr xrf 1463 -attr oid 77 -attr @path {/dot_product/clk}
+load net {en} -pin  "dot_product:core:inst" {en#1} -attr xrf 1464 -attr oid 78 -attr @path {/dot_product/en}
+load net {arst_n} -pin  "dot_product:core:inst" {arst_n#1} -attr xrf 1465 -attr oid 79 -attr @path {/dot_product/arst_n}
+load net {input_a:rsc:mgc_in_wire.d#1(0)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(0)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(1)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(1)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(2)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(2)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(3)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(3)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(4)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(4)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(5)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(5)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(6)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(6)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(7)} -pin  "dot_product:core:inst" {input_a:rsc:mgc_in_wire.d(7)} -attr vt dc -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(0)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(0)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(1)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(1)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(2)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(2)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(3)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(3)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(4)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(4)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(5)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(5)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(6)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(6)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(7)} -pin  "dot_product:core:inst" {input_b:rsc:mgc_in_wire.d(7)} -attr vt dc -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {output:rsc:mgc_out_stdreg.d#1(0)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(0)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(1)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(1)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(2)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(2)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(3)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(3)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(4)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(4)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(5)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(5)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(6)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(6)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(7)} -pin  "dot_product:core:inst" {output:rsc:mgc_out_stdreg.d(7)} -attr vt dc -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load inst "input_a:rsc:mgc_in_wire" "mgc_ioport.mgc_in_wire(1,8)" "INTERFACE" -attr xrf 1466 -attr oid 80 -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire} -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_ioport.mgc_in_wire(1,8)" -pg 1 -lvl 1
+load net {input_a:rsc:mgc_in_wire.d#1(0)} -pin  "input_a:rsc:mgc_in_wire" {d(0)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(1)} -pin  "input_a:rsc:mgc_in_wire" {d(1)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(2)} -pin  "input_a:rsc:mgc_in_wire" {d(2)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(3)} -pin  "input_a:rsc:mgc_in_wire" {d(3)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(4)} -pin  "input_a:rsc:mgc_in_wire" {d(4)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(5)} -pin  "input_a:rsc:mgc_in_wire" {d(5)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(6)} -pin  "input_a:rsc:mgc_in_wire" {d(6)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc:mgc_in_wire.d#1(7)} -pin  "input_a:rsc:mgc_in_wire" {d(7)} -attr vt d -attr @path {/dot_product/input_a:rsc:mgc_in_wire.d}
+load net {input_a:rsc.z(0)} -pin  "input_a:rsc:mgc_in_wire" {z(0)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(1)} -pin  "input_a:rsc:mgc_in_wire" {z(1)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(2)} -pin  "input_a:rsc:mgc_in_wire" {z(2)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(3)} -pin  "input_a:rsc:mgc_in_wire" {z(3)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(4)} -pin  "input_a:rsc:mgc_in_wire" {z(4)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(5)} -pin  "input_a:rsc:mgc_in_wire" {z(5)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(6)} -pin  "input_a:rsc:mgc_in_wire" {z(6)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load net {input_a:rsc.z(7)} -pin  "input_a:rsc:mgc_in_wire" {z(7)} -attr vt d -attr @path {/dot_product/input_a:rsc.z}
+load inst "input_b:rsc:mgc_in_wire" "mgc_ioport.mgc_in_wire(2,8)" "INTERFACE" -attr xrf 1467 -attr oid 81 -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire} -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_ioport.mgc_in_wire(2,8)" -pg 1 -lvl 1
+load net {input_b:rsc:mgc_in_wire.d#1(0)} -pin  "input_b:rsc:mgc_in_wire" {d(0)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(1)} -pin  "input_b:rsc:mgc_in_wire" {d(1)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(2)} -pin  "input_b:rsc:mgc_in_wire" {d(2)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(3)} -pin  "input_b:rsc:mgc_in_wire" {d(3)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(4)} -pin  "input_b:rsc:mgc_in_wire" {d(4)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(5)} -pin  "input_b:rsc:mgc_in_wire" {d(5)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(6)} -pin  "input_b:rsc:mgc_in_wire" {d(6)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc:mgc_in_wire.d#1(7)} -pin  "input_b:rsc:mgc_in_wire" {d(7)} -attr vt d -attr @path {/dot_product/input_b:rsc:mgc_in_wire.d}
+load net {input_b:rsc.z(0)} -pin  "input_b:rsc:mgc_in_wire" {z(0)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(1)} -pin  "input_b:rsc:mgc_in_wire" {z(1)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(2)} -pin  "input_b:rsc:mgc_in_wire" {z(2)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(3)} -pin  "input_b:rsc:mgc_in_wire" {z(3)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(4)} -pin  "input_b:rsc:mgc_in_wire" {z(4)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(5)} -pin  "input_b:rsc:mgc_in_wire" {z(5)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(6)} -pin  "input_b:rsc:mgc_in_wire" {z(6)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load net {input_b:rsc.z(7)} -pin  "input_b:rsc:mgc_in_wire" {z(7)} -attr vt d -attr @path {/dot_product/input_b:rsc.z}
+load inst "output:rsc:mgc_out_stdreg" "mgc_ioport.mgc_out_stdreg(3,8)" "INTERFACE" -attr xrf 1468 -attr oid 82 -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg} -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_ioport.mgc_out_stdreg(3,8)" -pg 1 -lvl 1002
+load net {output:rsc:mgc_out_stdreg.d#1(0)} -pin  "output:rsc:mgc_out_stdreg" {d(0)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(1)} -pin  "output:rsc:mgc_out_stdreg" {d(1)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(2)} -pin  "output:rsc:mgc_out_stdreg" {d(2)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(3)} -pin  "output:rsc:mgc_out_stdreg" {d(3)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(4)} -pin  "output:rsc:mgc_out_stdreg" {d(4)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(5)} -pin  "output:rsc:mgc_out_stdreg" {d(5)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(6)} -pin  "output:rsc:mgc_out_stdreg" {d(6)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc:mgc_out_stdreg.d#1(7)} -pin  "output:rsc:mgc_out_stdreg" {d(7)} -attr vt d -attr @path {/dot_product/output:rsc:mgc_out_stdreg.d}
+load net {output:rsc.z(0)} -pin  "output:rsc:mgc_out_stdreg" {z(0)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(1)} -pin  "output:rsc:mgc_out_stdreg" {z(1)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(2)} -pin  "output:rsc:mgc_out_stdreg" {z(2)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(3)} -pin  "output:rsc:mgc_out_stdreg" {z(3)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(4)} -pin  "output:rsc:mgc_out_stdreg" {z(4)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(5)} -pin  "output:rsc:mgc_out_stdreg" {z(5)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(6)} -pin  "output:rsc:mgc_out_stdreg" {z(6)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+load net {output:rsc.z(7)} -pin  "output:rsc:mgc_out_stdreg" {z(7)} -attr vt d -attr @path {/dot_product/output:rsc.z}
+### END MODULE 
+

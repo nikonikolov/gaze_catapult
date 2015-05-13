@@ -1,0 +1,9 @@
+
+State Machine - |ise_proj|dot_product:inst|dot_product_core:dot_product_core_inst|dot_product_core_fsm:dot_product_core_fsm_inst|state_var
+Name state_var.st_main_5 state_var.st_main_4 state_var.st_main_3 state_var.st_main_2 state_var.st_main_1 state_var.st_main 
+state_var.st_main 0 0 0 0 0 0 
+state_var.st_main_1 0 0 0 0 1 1 
+state_var.st_main_2 0 0 0 1 0 1 
+state_var.st_main_3 0 0 1 0 0 1 
+state_var.st_main_4 0 1 0 0 0 1 
+state_var.st_main_5 1 0 0 0 0 1 

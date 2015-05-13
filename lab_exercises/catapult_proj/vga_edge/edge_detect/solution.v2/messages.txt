@@ -1,0 +1,14 @@
+
+# Messages from "go new"
+
+Creating project directory 'H:\lab proj\prj2\catapult_proj\vga_edge\edge_detect'. (PRJ-1)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Branching solution 'solution.v2' at state 'new' (PRJ-2)

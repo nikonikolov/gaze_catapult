@@ -1,0 +1,156 @@
+
+# Program: Catapult University Version
+# Version: 2011a.126
+#    File: Nlview netlist
+
+module new "black_white:core" "orig"
+load port {clk} input -attr xrf 437 -attr oid 1 -attr vt d -attr @path {/black_white/black_white:core/clk}
+load port {en} input -attr xrf 438 -attr oid 2 -attr vt d -attr @path {/black_white/black_white:core/en}
+load port {arst_n} input -attr xrf 439 -attr oid 3 -attr vt d -attr @path {/black_white/black_white:core/arst_n}
+load net {clk} -attr xrf 440 -attr oid 4
+load net {clk} -port {clk} -attr xrf 441 -attr oid 5
+load net {en} -attr xrf 442 -attr oid 6
+load net {en} -port {en} -attr xrf 443 -attr oid 7
+load net {arst_n} -attr xrf 444 -attr oid 8
+load net {arst_n} -port {arst_n} -attr xrf 445 -attr oid 9
+### END MODULE 
+
+module new "black_white" "orig"
+load portBus {output:rsc.z(29:0)} output 30 {output:rsc.z(29)} {output:rsc.z(28)} {output:rsc.z(27)} {output:rsc.z(26)} {output:rsc.z(25)} {output:rsc.z(24)} {output:rsc.z(23)} {output:rsc.z(22)} {output:rsc.z(21)} {output:rsc.z(20)} {output:rsc.z(19)} {output:rsc.z(18)} {output:rsc.z(17)} {output:rsc.z(16)} {output:rsc.z(15)} {output:rsc.z(14)} {output:rsc.z(13)} {output:rsc.z(12)} {output:rsc.z(11)} {output:rsc.z(10)} {output:rsc.z(9)} {output:rsc.z(8)} {output:rsc.z(7)} {output:rsc.z(6)} {output:rsc.z(5)} {output:rsc.z(4)} {output:rsc.z(3)} {output:rsc.z(2)} {output:rsc.z(1)} {output:rsc.z(0)} -attr xrf 446 -attr oid 10 -attr vt d -attr @path {/black_white/output:rsc.z}
+load port {clk} input -attr xrf 447 -attr oid 11 -attr vt d -attr @path {/black_white/clk}
+load port {en} input -attr xrf 448 -attr oid 12 -attr vt d -attr @path {/black_white/en}
+load port {arst_n} input -attr xrf 449 -attr oid 13 -attr vt d -attr @path {/black_white/arst_n}
+load symbol "mgc_ioport.mgc_out_stdreg(4,30)" "INTERFACE" GEN boxcolor 0 \
+     portBus {d(29:0)} input 30 {d(29)} {d(28)} {d(27)} {d(26)} {d(25)} {d(24)} {d(23)} {d(22)} {d(21)} {d(20)} {d(19)} {d(18)} {d(17)} {d(16)} {d(15)} {d(14)} {d(13)} {d(12)} {d(11)} {d(10)} {d(9)} {d(8)} {d(7)} {d(6)} {d(5)} {d(4)} {d(3)} {d(2)} {d(1)} {d(0)} \
+     portBus {z(29:0)} output 30 {z(29)} {z(28)} {z(27)} {z(26)} {z(25)} {z(24)} {z(23)} {z(22)} {z(21)} {z(20)} {z(19)} {z(18)} {z(17)} {z(16)} {z(15)} {z(14)} {z(13)} {z(12)} {z(11)} {z(10)} {z(9)} {z(8)} {z(7)} {z(6)} {z(5)} {z(4)} {z(3)} {z(2)} {z(1)} {z(0)} \
+
+load net {output:rsc.z(0)} -attr vt d
+load net {output:rsc.z(1)} -attr vt d
+load net {output:rsc.z(2)} -attr vt d
+load net {output:rsc.z(3)} -attr vt d
+load net {output:rsc.z(4)} -attr vt d
+load net {output:rsc.z(5)} -attr vt d
+load net {output:rsc.z(6)} -attr vt d
+load net {output:rsc.z(7)} -attr vt d
+load net {output:rsc.z(8)} -attr vt d
+load net {output:rsc.z(9)} -attr vt d
+load net {output:rsc.z(10)} -attr vt d
+load net {output:rsc.z(11)} -attr vt d
+load net {output:rsc.z(12)} -attr vt d
+load net {output:rsc.z(13)} -attr vt d
+load net {output:rsc.z(14)} -attr vt d
+load net {output:rsc.z(15)} -attr vt d
+load net {output:rsc.z(16)} -attr vt d
+load net {output:rsc.z(17)} -attr vt d
+load net {output:rsc.z(18)} -attr vt d
+load net {output:rsc.z(19)} -attr vt d
+load net {output:rsc.z(20)} -attr vt d
+load net {output:rsc.z(21)} -attr vt d
+load net {output:rsc.z(22)} -attr vt d
+load net {output:rsc.z(23)} -attr vt d
+load net {output:rsc.z(24)} -attr vt d
+load net {output:rsc.z(25)} -attr vt d
+load net {output:rsc.z(26)} -attr vt d
+load net {output:rsc.z(27)} -attr vt d
+load net {output:rsc.z(28)} -attr vt d
+load net {output:rsc.z(29)} -attr vt d
+load netBundle {output:rsc.z} 30 {output:rsc.z(0)} {output:rsc.z(1)} {output:rsc.z(2)} {output:rsc.z(3)} {output:rsc.z(4)} {output:rsc.z(5)} {output:rsc.z(6)} {output:rsc.z(7)} {output:rsc.z(8)} {output:rsc.z(9)} {output:rsc.z(10)} {output:rsc.z(11)} {output:rsc.z(12)} {output:rsc.z(13)} {output:rsc.z(14)} {output:rsc.z(15)} {output:rsc.z(16)} {output:rsc.z(17)} {output:rsc.z(18)} {output:rsc.z(19)} {output:rsc.z(20)} {output:rsc.z(21)} {output:rsc.z(22)} {output:rsc.z(23)} {output:rsc.z(24)} {output:rsc.z(25)} {output:rsc.z(26)} {output:rsc.z(27)} {output:rsc.z(28)} {output:rsc.z(29)} -attr xrf 450 -attr oid 14 -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(0)} -port {output:rsc.z(0)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(1)} -port {output:rsc.z(1)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(2)} -port {output:rsc.z(2)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(3)} -port {output:rsc.z(3)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(4)} -port {output:rsc.z(4)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(5)} -port {output:rsc.z(5)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(6)} -port {output:rsc.z(6)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(7)} -port {output:rsc.z(7)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(8)} -port {output:rsc.z(8)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(9)} -port {output:rsc.z(9)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(10)} -port {output:rsc.z(10)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(11)} -port {output:rsc.z(11)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(12)} -port {output:rsc.z(12)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(13)} -port {output:rsc.z(13)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(14)} -port {output:rsc.z(14)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(15)} -port {output:rsc.z(15)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(16)} -port {output:rsc.z(16)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(17)} -port {output:rsc.z(17)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(18)} -port {output:rsc.z(18)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(19)} -port {output:rsc.z(19)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(20)} -port {output:rsc.z(20)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(21)} -port {output:rsc.z(21)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(22)} -port {output:rsc.z(22)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(23)} -port {output:rsc.z(23)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(24)} -port {output:rsc.z(24)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(25)} -port {output:rsc.z(25)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(26)} -port {output:rsc.z(26)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(27)} -port {output:rsc.z(27)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(28)} -port {output:rsc.z(28)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(29)} -port {output:rsc.z(29)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {clk} -attr xrf 451 -attr oid 15
+load net {clk} -port {clk} -attr xrf 452 -attr oid 16
+load net {en} -attr xrf 453 -attr oid 17
+load net {en} -port {en} -attr xrf 454 -attr oid 18
+load net {arst_n} -attr xrf 455 -attr oid 19
+load net {arst_n} -port {arst_n} -attr xrf 456 -attr oid 20
+load inst "output:rsc:mgc_out_stdreg" "mgc_ioport.mgc_out_stdreg(4,30)" "INTERFACE" -attr xrf 457 -attr oid 21 -attr vt d -attr @path {/black_white/output:rsc:mgc_out_stdreg} -attr delay -1000000000000000000000000000000.000000 -attr qmod "mgc_ioport.mgc_out_stdreg(4,30)" -pg 1 -lvl 1002
+load net {PWR} -pin  "output:rsc:mgc_out_stdreg" {d(0)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(1)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(2)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(3)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(4)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(5)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(6)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(7)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(8)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(9)} -attr @path {/black_white/C1049601_30#1}
+load net {PWR} -pin  "output:rsc:mgc_out_stdreg" {d(10)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(11)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(12)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(13)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(14)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(15)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(16)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(17)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(18)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(19)} -attr @path {/black_white/C1049601_30#1}
+load net {PWR} -pin  "output:rsc:mgc_out_stdreg" {d(20)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(21)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(22)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(23)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(24)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(25)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(26)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(27)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(28)} -attr @path {/black_white/C1049601_30#1}
+load net {GND} -pin  "output:rsc:mgc_out_stdreg" {d(29)} -attr @path {/black_white/C1049601_30#1}
+load net {output:rsc.z(0)} -pin  "output:rsc:mgc_out_stdreg" {z(0)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(1)} -pin  "output:rsc:mgc_out_stdreg" {z(1)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(2)} -pin  "output:rsc:mgc_out_stdreg" {z(2)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(3)} -pin  "output:rsc:mgc_out_stdreg" {z(3)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(4)} -pin  "output:rsc:mgc_out_stdreg" {z(4)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(5)} -pin  "output:rsc:mgc_out_stdreg" {z(5)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(6)} -pin  "output:rsc:mgc_out_stdreg" {z(6)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(7)} -pin  "output:rsc:mgc_out_stdreg" {z(7)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(8)} -pin  "output:rsc:mgc_out_stdreg" {z(8)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(9)} -pin  "output:rsc:mgc_out_stdreg" {z(9)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(10)} -pin  "output:rsc:mgc_out_stdreg" {z(10)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(11)} -pin  "output:rsc:mgc_out_stdreg" {z(11)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(12)} -pin  "output:rsc:mgc_out_stdreg" {z(12)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(13)} -pin  "output:rsc:mgc_out_stdreg" {z(13)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(14)} -pin  "output:rsc:mgc_out_stdreg" {z(14)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(15)} -pin  "output:rsc:mgc_out_stdreg" {z(15)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(16)} -pin  "output:rsc:mgc_out_stdreg" {z(16)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(17)} -pin  "output:rsc:mgc_out_stdreg" {z(17)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(18)} -pin  "output:rsc:mgc_out_stdreg" {z(18)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(19)} -pin  "output:rsc:mgc_out_stdreg" {z(19)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(20)} -pin  "output:rsc:mgc_out_stdreg" {z(20)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(21)} -pin  "output:rsc:mgc_out_stdreg" {z(21)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(22)} -pin  "output:rsc:mgc_out_stdreg" {z(22)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(23)} -pin  "output:rsc:mgc_out_stdreg" {z(23)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(24)} -pin  "output:rsc:mgc_out_stdreg" {z(24)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(25)} -pin  "output:rsc:mgc_out_stdreg" {z(25)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(26)} -pin  "output:rsc:mgc_out_stdreg" {z(26)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(27)} -pin  "output:rsc:mgc_out_stdreg" {z(27)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(28)} -pin  "output:rsc:mgc_out_stdreg" {z(28)} -attr vt d -attr @path {/black_white/output:rsc.z}
+load net {output:rsc.z(29)} -pin  "output:rsc:mgc_out_stdreg" {z(29)} -attr vt d -attr @path {/black_white/output:rsc.z}
+### END MODULE 
+

@@ -1,0 +1,31 @@
+//  Catapult University Version 2011a.126 (Production Release) Wed Aug  8 00:52:07 PDT 2012
+//  
+//  Copyright (c) Calypto Design Systems, Inc., 1996-2012, All Rights Reserved.
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF CALYPTO DESIGN SYSTEMS OR ITS LICENSORS
+//  
+//  Running on Windows 7 nn1114@EEWS104A-036 Service Pack 1 6.01.7601 i686
+//  
+//  Package information: SIFLIBS v17.0_1.1, HLS_PKGS v17.0_1.1, 
+//                       DesignPad v2.78_0.0
+//  
+//  This version may only be used for academic purposes.  Some optimizations 
+//  are disabled, so results obtained from this version may be sub-optimal.
+//  
+//  Start time Tue May 12 17:51:56 2015
+# -------------------------------------------------
+# Logging session transcript to file "C:\Users\nn1114\AppData\Local\Temp\log37522703120.0"
+# Loading options from registry.
+# Warning: set_working_dir: Directory 'C:/Windows/System32' not writable, using C:/Users/nn1114/AppData/Local/Temp
+project load {H:/lab project/student_files_2015/prj2/catapult_proj/find_center/find_center}
+# Moving session transcript to file "H:\lab project\student_files_2015\prj2\catapult_proj\find_center\catapult.log"
+project new -name skin
+set_working_dir {H:/lab project/student_files_2015/prj2/catapult_proj/skin}
+solution file add ./skin.c
+# /INPUTFILES/1
+solution file add ./skin.h
+# /INPUTFILES/2
+# File 'H:/lab project/student_files_2015/prj2/catapult_proj/skin/skin.c' saved
+# File 'H:/lab project/student_files_2015/prj2/catapult_proj/skin/skin.h' saved
+quit -f
