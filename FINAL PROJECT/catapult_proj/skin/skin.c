@@ -37,100 +37,41 @@
 
 
 #include <ac_fixed.h>
-#include "blur.h"
+#include "skin.h"
 #include <iostream>
 
 // shift_class: page 119 HLS Blue Book
-#include "shift_class.h" 
+//#include "shift_class.h" 
 
+
+/*INSTRUCTIONS:
+	proper function declaration
+	do you need to keep track of x and y?
+	*/
 
 
 
 #pragma hls_design top
-void mean_vga(ac_int<PIXEL_WL*KERNEL_WIDTH,false> vin[NUM_PIXELS], ac_int<PIXEL_WL,false> vout[NUM_PIXELS])
+void detect_skin(ac_int<PIXEL_WL,false> pixin, ac_int<1,false> valueout)
 {
-    ac_int<16, false> red, green, blue, r[KERNEL_WIDTH], g[KERNEL_WIDTH], b[KERNEL_WIDTH];
-    
+    ac_int<13, false> Ytmp, Cbtmp, Crtmp, r[KERNEL_WIDTH], g[KERNEL_WIDTH], b[KERNEL_WIDTH];
+  
+    //note that actual values will be these divided by 1000
+    Y  =  299 * pixin.slc<COLOUR_WL>(2*COLOUR_WL + PIXEL_WL) + 587 * pixin.slc<COLOUR_WL>(COLOUR_WL) + 114 * pixin.slc<COLOUR_WL>(0);
+	Cb = -169 * pixin.slc<COLOUR_WL>(2*COLOUR_WL + PIXEL_WL) - 332 * pixin.slc<COLOUR_WL>(COLOUR_WL) + 501 * pixin.slc<COLOUR_WL>(0) + 512000;
+	Cr =  500 * pixin.slc<COLOUR_WL>(2*COLOUR_WL + PIXEL_WL) - 419 * pixin.slc<COLOUR_WL>(COLOUR_WL) - 081 * pixin.slc<COLOUR_WL>(0) + 512000;
 
-// #if 1: use filter
-// #if 0: copy input to output bypassing filter
-#if 1
+	//if(Cb>=415000 && Cb<=485000 && Cr>=585000 && Cr<=675000 )		//Adi's values
+	//if(Cb>=77 && Cb<=127 && Cr>=133 && Cr<=173 && Y>80 )	//original values in 0 to 255
+	if(Cb>=309000 && Cb<=510000 && Cr>=534000 && Cr<=695000 && Y>321000 ){
+		valueout=1;
+	}
+	else{
+		valueout=0;
+	}   
 
-    // shifts pixels from KERNEL_WIDTH rows and keeps KERNEL_WIDTH columns (KERNEL_WIDTHxKERNEL_WIDTH pixels stored)
-    static shift_class<ac_int<PIXEL_WL*KERNEL_WIDTH,false>, KERNEL_WIDTH> regs;
-    int i;
-
-    FRAME: for(int p = 0; p < NUM_PIXELS; p++) {
-		// init
-		red = 0; 
-		green = 0; 
-		blue = 0;
-		RESET: for(i = 0; i < KERNEL_WIDTH; i++) {
-			r[i] = 0;
-			g[i] = 0;
-			b[i] = 0;
-		}
-	    
-		// shift input data in the filter fifo
-		regs << vin[p]; // advance the pointer address by the pixel number (testbench/simulation only)
-		// accumulate
-		ACC1: for(i = 0; i < KERNEL_WIDTH; i++) {
-			// current line
-			r[0] += (regs[i].slc<COLOUR_WL>(2*COLOUR_WL));
-			g[0] += (regs[i].slc<COLOUR_WL>(COLOUR_WL));
-			b[0] += (regs[i].slc<COLOUR_WL>(0));
-			// the line before ...
-			r[1] += (regs[i].slc<COLOUR_WL>(2*COLOUR_WL + PIXEL_WL));
-			g[1] += (regs[i].slc<COLOUR_WL>(COLOUR_WL + PIXEL_WL));
-			b[1] += (regs[i].slc<COLOUR_WL>(0 + PIXEL_WL));
-			// the line before ...
-			r[2] += (regs[i].slc<COLOUR_WL>(2*COLOUR_WL + 2*PIXEL_WL));
-			g[2] += (regs[i].slc<COLOUR_WL>(COLOUR_WL + 2*PIXEL_WL)) ;
-			b[2] += (regs[i].slc<COLOUR_WL>(0 + 2*PIXEL_WL)) ;
-			// the line before ... 
-			r[3] += (regs[i].slc<COLOUR_WL>(2*COLOUR_WL + 3*PIXEL_WL));
-			g[3] += (regs[i].slc<COLOUR_WL>(COLOUR_WL + 3*PIXEL_WL)) ;
-			b[3] += (regs[i].slc<COLOUR_WL>(0 + 3*PIXEL_WL)) ;
-			// the line before ...
-			r[4] += (regs[i].slc<COLOUR_WL>(2*COLOUR_WL + 4*PIXEL_WL));
-			g[4] += (regs[i].slc<COLOUR_WL>(COLOUR_WL + 4*PIXEL_WL)) ;
-			b[4] += (regs[i].slc<COLOUR_WL>(0 + 4*PIXEL_WL)) ;
-		}
-		// add the accumualted value for all processed lines
-		ACC2: for(i = 0; i < KERNEL_WIDTH; i++) {    
-			red += r[i];
-			green += g[i];
-			blue += b[i];
-		}
-		// normalize result
-		red /= KERNEL_NUMEL;
-		green /= KERNEL_NUMEL;
-		blue /= KERNEL_NUMEL;
-	    
-		// group the RGB components into a single signal
-		vout[p] = ((((ac_int<PIXEL_WL, false>)red) << (2*COLOUR_WL)) | (((ac_int<PIXEL_WL, false>)green) << COLOUR_WL) | (ac_int<PIXEL_WL, false>)blue);
-	    
-    }
 }
-     
-     
-     
-     
-     
-     
-#else    
-// display input  (test only)
-    FRAME: for(p = 0; p < NUM_PIXELS; p++) {
-        // copy the value of each colour component from the input stream
-        red = vin[p].slc<COLOUR_WL>(2*COLOUR_WL);
-        green = vin[p].slc<COLOUR_WL>(COLOUR_WL);
-        blue = vin[p].slc<COLOUR_WL>(0);
 
-		// combine the 3 color components into 1 signal only
-        vout[p] = ((((ac_int<PIXEL_WL, false>)red) << (2*COLOUR_WL)) | (((ac_int<PIXEL_WL, false>)green) << COLOUR_WL) | (ac_int<PIXEL_WL, false>)blue);   
-    }
-}
-#endif
 
 
 // end of file

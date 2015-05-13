@@ -23,8 +23,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#ifndef _SKIN
-#define _SKIN
+#ifndef _EROSION
+#define _EROSION
 
 #include <ac_int.h>
 #include <iostream>
@@ -32,14 +32,15 @@
 // total number of pixels from screen frame/image read in testbench
 #define NUM_PIXELS (640*480)
 
-#define REGION      5
-#define KERNEL_NUMEL      (KERNEL_WIDTH * KERNEL_WIDTH)
-#define COLOUR_WL         10
-#define PIXEL_WL          (3 * COLOUR_WL)
+#define REGION      		5
+#define KERNEL_WIDTH		3
+#define KERNEL_NUMEL      	(KERNEL_WIDTH * KERNEL_WIDTH)
+#define COLOUR_WL         	10
+#define PIXEL_WL          	(3 * COLOUR_WL)
 
 #define  COORD_WL          10
 
 
-void void detect_skin(ac_int<PIXEL_WL,false> pixin, ac_int<1,false> valueout);
+void mean_vga(ac_int<PIXEL_WL*KERNEL_WIDTH,false> vin[NUM_PIXELS], ac_int<PIXEL_WL,false> vout[NUM_PIXELS]);
 
 #endif
